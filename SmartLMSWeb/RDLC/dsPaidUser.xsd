@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsPaidUser" targetNamespace="http://tempuri.org/dsPaidUser.xsd" xmlns:mstns="http://tempuri.org/dsPaidUser.xsd" xmlns="http://tempuri.org/dsPaidUser.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsPaidUser" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsPaidUser" msprop:Generator_UserDSName="dsPaidUser">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtPaidUser" msprop:Generator_TableClassName="dtPaidUserDataTable" msprop:Generator_TableVarName="tabledtPaidUser" msprop:Generator_TablePropName="dtPaidUser" msprop:Generator_RowDeletingName="dtPaidUserRowDeleting" msprop:Generator_RowChangingName="dtPaidUserRowChanging" msprop:Generator_RowEvHandlerName="dtPaidUserRowChangeEventHandler" msprop:Generator_RowDeletedName="dtPaidUserRowDeleted" msprop:Generator_UserTableName="dtPaidUser" msprop:Generator_RowChangedName="dtPaidUserRowChanged" msprop:Generator_RowEvArgName="dtPaidUserRowChangeEvent" msprop:Generator_RowClassName="dtPaidUserRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EMPLOYEE_ID" msprop:Generator_ColumnVarNameInTable="columnEMPLOYEE_ID" msprop:Generator_ColumnPropNameInRow="EMPLOYEE_ID" msprop:Generator_ColumnPropNameInTable="EMPLOYEE_IDColumn" msprop:Generator_UserColumnName="EMPLOYEE_ID" type="xs:int" minOccurs="0" />
+              <xs:element name="EMPNAME" msprop:Generator_ColumnVarNameInTable="columnEMPNAME" msprop:Generator_ColumnPropNameInRow="EMPNAME" msprop:Generator_ColumnPropNameInTable="EMPNAMEColumn" msprop:Generator_UserColumnName="EMPNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="PAID_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnPAID_AMOUNT" msprop:Generator_ColumnPropNameInRow="PAID_AMOUNT" msprop:Generator_ColumnPropNameInTable="PAID_AMOUNTColumn" msprop:Generator_UserColumnName="PAID_AMOUNT" type="xs:int" minOccurs="0" />
+              <xs:element name="IS_ACTIVE" msprop:Generator_ColumnVarNameInTable="columnIS_ACTIVE" msprop:Generator_ColumnPropNameInRow="IS_ACTIVE" msprop:Generator_ColumnPropNameInTable="IS_ACTIVEColumn" msprop:Generator_UserColumnName="IS_ACTIVE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

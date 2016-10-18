@@ -1,0 +1,44 @@
+C:\Users\Gaurav\documents\visual studio 2010\Projects\SmartLMSWeb\SmartLMSWeb\obj\Debug\SmartLMSWeb.csprojResolveAssemblyReference.cache
+C:\Users\Gaurav\documents\visual studio 2010\Projects\SmartLMSWeb\SmartLMSWeb\bin\SmartLMSWeb.dll
+C:\Users\Gaurav\documents\visual studio 2010\Projects\SmartLMSWeb\SmartLMSWeb\bin\SmartLMSWeb.pdb
+C:\Users\Gaurav\documents\visual studio 2010\Projects\SmartLMSWeb\SmartLMSWeb\bin\LibApp.dll
+C:\Users\Gaurav\documents\visual studio 2010\Projects\SmartLMSWeb\SmartLMSWeb\bin\Oracle.DataAccess.dll
+C:\Users\Gaurav\documents\visual studio 2010\Projects\SmartLMSWeb\SmartLMSWeb\bin\LibApp.pdb
+C:\Users\Gaurav\documents\visual studio 2010\Projects\SmartLMSWeb\SmartLMSWeb\obj\Debug\SmartLMSWeb.dll
+C:\Users\Gaurav\documents\visual studio 2010\Projects\SmartLMSWeb\SmartLMSWeb\obj\Debug\SmartLMSWeb.pdb
+E:\Gaurav\Library\SmartLMSWeb\SmartLMSWeb\bin\SmartLMSWeb.dll
+E:\Gaurav\Library\SmartLMSWeb\SmartLMSWeb\bin\SmartLMSWeb.pdb
+E:\Gaurav\Library\SmartLMSWeb\SmartLMSWeb\bin\LibApp.dll
+E:\Gaurav\Library\SmartLMSWeb\SmartLMSWeb\bin\Oracle.DataAccess.dll
+E:\Gaurav\Library\SmartLMSWeb\SmartLMSWeb\bin\LibApp.pdb
+E:\Gaurav\Library\SmartLMSWeb\SmartLMSWeb\obj\Debug\SmartLMSWeb.csprojResolveAssemblyReference.cache
+E:\Gaurav\Library\SmartLMSWeb\SmartLMSWeb\obj\Debug\SmartLMSWeb.dll
+E:\Gaurav\Library\SmartLMSWeb\SmartLMSWeb\obj\Debug\SmartLMSWeb.pdb
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\bin\SmartLMSWeb.dll
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\bin\SmartLMSWeb.pdb
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\bin\LibApp.dll
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\bin\Microsoft.ReportViewer.WebForms.dll
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\bin\Oracle.DataAccess.dll
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\bin\LibApp.pdb
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\bin\Microsoft.ReportViewer.WebForms.xml
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\obj\Debug\SmartLMSWeb.csprojResolveAssemblyReference.cache
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\obj\Debug\RdlCompile.cache
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\obj\Debug\RdlCompile.compiled
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\obj\Debug\SmartLMSWeb.dll
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\obj\Debug\SmartLMSWeb.pdb
+D:\SmartLMS\SmartLMSWeb\obj\Debug\SmartLMSWeb.csprojResolveAssemblyReference.cache
+D:\SmartLMS\SmartLMSWeb\obj\Debug\RdlCompile.cache
+D:\SmartLMS\SmartLMSWeb\obj\Debug\RdlCompile.compiled
+D:\SmartLMS\SmartLMSWeb\obj\Debug\SmartLMSWeb.dll
+D:\SmartLMS\SmartLMSWeb\bin\SmartLMSWeb.dll.config
+D:\SmartLMS\SmartLMSWeb\bin\SmartLMSWeb.dll
+D:\SmartLMS\SmartLMSWeb\bin\SmartLMSWeb.pdb
+D:\SmartLMS\SmartLMSWeb\bin\LibApp.dll
+D:\SmartLMS\SmartLMSWeb\bin\Microsoft.ReportViewer.WebForms.dll
+D:\SmartLMS\SmartLMSWeb\bin\MySql.Data.dll
+D:\SmartLMS\SmartLMSWeb\bin\LibApp.pdb
+D:\SmartLMS\SmartLMSWeb\obj\Debug\SmartLMSWeb.pdb
+D:\SmartLMS\SmartLMSWeb\bin\Microsoft.ReportViewer.Common.dll
+D:\SmartLMS\SmartLMSWeb\bin\Microsoft.ReportViewer.WinForms.dll
+D:\SmartLMS\SmartLMSWeb\bin\Microsoft.ReportViewer.WebForms.xml
+D:\SmartLMS\SmartLMSWeb\bin\Microsoft.ReportViewer.WinForms.xml

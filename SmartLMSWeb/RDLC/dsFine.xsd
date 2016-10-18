@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsFine" targetNamespace="http://tempuri.org/dsFine.xsd" xmlns:mstns="http://tempuri.org/dsFine.xsd" xmlns="http://tempuri.org/dsFine.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsFine" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsFine" msprop:Generator_UserDSName="dsFine">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtFine" msprop:Generator_TableClassName="dtFineDataTable" msprop:Generator_TableVarName="tabledtFine" msprop:Generator_TablePropName="dtFine" msprop:Generator_RowDeletingName="dtFineRowDeleting" msprop:Generator_RowChangingName="dtFineRowChanging" msprop:Generator_RowEvHandlerName="dtFineRowChangeEventHandler" msprop:Generator_RowDeletedName="dtFineRowDeleted" msprop:Generator_UserTableName="dtFine" msprop:Generator_RowChangedName="dtFineRowChanged" msprop:Generator_RowEvArgName="dtFineRowChangeEvent" msprop:Generator_RowClassName="dtFineRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EMP_Name" msprop:Generator_ColumnVarNameInTable="columnEMP_Name" msprop:Generator_ColumnPropNameInRow="EMP_Name" msprop:Generator_ColumnPropNameInTable="EMP_NameColumn" msprop:Generator_UserColumnName="EMP_Name" type="xs:string" minOccurs="0" />
+              <xs:element name="BOOK_NAME" msprop:Generator_ColumnVarNameInTable="columnBOOK_NAME" msprop:Generator_ColumnPropNameInRow="BOOK_NAME" msprop:Generator_ColumnPropNameInTable="BOOK_NAMEColumn" msprop:Generator_UserColumnName="BOOK_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="PAID_DATE" msprop:Generator_ColumnVarNameInTable="columnPAID_DATE" msprop:Generator_ColumnPropNameInRow="PAID_DATE" msprop:Generator_ColumnPropNameInTable="PAID_DATEColumn" msprop:Generator_UserColumnName="PAID_DATE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FINE_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnFINE_AMOUNT" msprop:Generator_ColumnPropNameInRow="FINE_AMOUNT" msprop:Generator_ColumnPropNameInTable="FINE_AMOUNTColumn" msprop:Generator_UserColumnName="FINE_AMOUNT" type="xs:int" minOccurs="0" />
+              <xs:element name="REMARKS" msprop:Generator_ColumnVarNameInTable="columnREMARKS" msprop:Generator_ColumnPropNameInRow="REMARKS" msprop:Generator_ColumnPropNameInTable="REMARKSColumn" msprop:Generator_UserColumnName="REMARKS" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

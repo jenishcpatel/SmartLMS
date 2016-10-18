@@ -1,0 +1,6 @@
+E:\Gaurav\Library\SmartLMS\LibApp\bin\LibApp.dll
+E:\Gaurav\Library\SmartLMS\LibApp\bin\LibApp.pdb
+E:\Gaurav\Library\SmartLMS\LibApp\bin\Oracle.Web.dll
+E:\Gaurav\Library\SmartLMS\LibApp\obj\Release\LibApp.csproj.ResolveComReference.cache
+E:\Gaurav\Library\SmartLMS\LibApp\obj\Release\LibApp.dll
+E:\Gaurav\Library\SmartLMS\LibApp\obj\Release\LibApp.pdb

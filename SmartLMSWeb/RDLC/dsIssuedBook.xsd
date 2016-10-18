@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsIssuedBook" targetNamespace="http://tempuri.org/dsIssuedBook.xsd" xmlns:mstns="http://tempuri.org/dsIssuedBook.xsd" xmlns="http://tempuri.org/dsIssuedBook.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsIssuedBook" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsIssuedBook" msprop:Generator_UserDSName="dsIssuedBook">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtIssueBook" msprop:Generator_TableClassName="dtIssueBookDataTable" msprop:Generator_TableVarName="tabledtIssueBook" msprop:Generator_TablePropName="dtIssueBook" msprop:Generator_RowDeletingName="dtIssueBookRowDeleting" msprop:Generator_RowChangingName="dtIssueBookRowChanging" msprop:Generator_RowEvHandlerName="dtIssueBookRowChangeEventHandler" msprop:Generator_RowDeletedName="dtIssueBookRowDeleted" msprop:Generator_UserTableName="dtIssueBook" msprop:Generator_RowChangedName="dtIssueBookRowChanged" msprop:Generator_RowEvArgName="dtIssueBookRowChangeEvent" msprop:Generator_RowClassName="dtIssueBookRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EMPLOYEE_ID" msprop:Generator_ColumnVarNameInTable="columnEMPLOYEE_ID" msprop:Generator_ColumnPropNameInRow="EMPLOYEE_ID" msprop:Generator_ColumnPropNameInTable="EMPLOYEE_IDColumn" msprop:Generator_UserColumnName="EMPLOYEE_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="EMPNAME" msprop:Generator_ColumnVarNameInTable="columnEMPNAME" msprop:Generator_ColumnPropNameInRow="EMPNAME" msprop:Generator_ColumnPropNameInTable="EMPNAMEColumn" msprop:Generator_UserColumnName="EMPNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="ISSUED_DATE" msprop:Generator_ColumnVarNameInTable="columnISSUED_DATE" msprop:Generator_ColumnPropNameInRow="ISSUED_DATE" msprop:Generator_ColumnPropNameInTable="ISSUED_DATEColumn" msprop:Generator_UserColumnName="ISSUED_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="ISSUE_FROM_DATE" msprop:Generator_ColumnVarNameInTable="columnISSUE_FROM_DATE" msprop:Generator_ColumnPropNameInRow="ISSUE_FROM_DATE" msprop:Generator_ColumnPropNameInTable="ISSUE_FROM_DATEColumn" msprop:Generator_UserColumnName="ISSUE_FROM_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="ISUE_TO_DATE" msprop:Generator_ColumnVarNameInTable="columnISUE_TO_DATE" msprop:Generator_ColumnPropNameInRow="ISUE_TO_DATE" msprop:Generator_ColumnPropNameInTable="ISUE_TO_DATEColumn" msprop:Generator_UserColumnName="ISUE_TO_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="BOOK_NAME" msprop:Generator_ColumnVarNameInTable="columnBOOK_NAME" msprop:Generator_ColumnPropNameInRow="BOOK_NAME" msprop:Generator_ColumnPropNameInTable="BOOK_NAMEColumn" msprop:Generator_UserColumnName="BOOK_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="RETURN_DATE" msprop:Generator_ColumnVarNameInTable="columnRETURN_DATE" msprop:Generator_ColumnPropNameInRow="RETURN_DATE" msprop:Generator_ColumnPropNameInTable="RETURN_DATEColumn" msprop:Generator_UserColumnName="RETURN_DATE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

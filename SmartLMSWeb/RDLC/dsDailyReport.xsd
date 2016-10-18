@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsDailyReport" targetNamespace="http://tempuri.org/dsDailyReport.xsd" xmlns:mstns="http://tempuri.org/dsDailyReport.xsd" xmlns="http://tempuri.org/dsDailyReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsDailyReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsDailyReport" msprop:Generator_UserDSName="dsDailyReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtDaily" msprop:Generator_TableClassName="dtDailyDataTable" msprop:Generator_TableVarName="tabledtDaily" msprop:Generator_TablePropName="dtDaily" msprop:Generator_RowDeletingName="dtDailyRowDeleting" msprop:Generator_RowChangingName="dtDailyRowChanging" msprop:Generator_RowEvHandlerName="dtDailyRowChangeEventHandler" msprop:Generator_RowDeletedName="dtDailyRowDeleted" msprop:Generator_UserTableName="dtDaily" msprop:Generator_RowChangedName="dtDailyRowChanged" msprop:Generator_RowEvArgName="dtDailyRowChangeEvent" msprop:Generator_RowClassName="dtDailyRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EMPLOYEE_ID" msprop:Generator_ColumnVarNameInTable="columnEMPLOYEE_ID" msprop:Generator_ColumnPropNameInRow="EMPLOYEE_ID" msprop:Generator_ColumnPropNameInTable="EMPLOYEE_IDColumn" msprop:Generator_UserColumnName="EMPLOYEE_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnEMP_NAME" msprop:Generator_ColumnPropNameInRow="EMP_NAME" msprop:Generator_ColumnPropNameInTable="EMP_NAMEColumn" msprop:Generator_UserColumnName="EMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="BAR_CODE" msprop:Generator_ColumnVarNameInTable="columnBAR_CODE" msprop:Generator_ColumnPropNameInRow="BAR_CODE" msprop:Generator_ColumnPropNameInTable="BAR_CODEColumn" msprop:Generator_UserColumnName="BAR_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="ISSUE_FROM_DATE" msprop:Generator_ColumnVarNameInTable="columnISSUE_FROM_DATE" msprop:Generator_ColumnPropNameInRow="ISSUE_FROM_DATE" msprop:Generator_ColumnPropNameInTable="ISSUE_FROM_DATEColumn" msprop:Generator_UserColumnName="ISSUE_FROM_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="ISUE_TO_DATE" msprop:Generator_ColumnVarNameInTable="columnISUE_TO_DATE" msprop:Generator_ColumnPropNameInRow="ISUE_TO_DATE" msprop:Generator_ColumnPropNameInTable="ISUE_TO_DATEColumn" msprop:Generator_UserColumnName="ISUE_TO_DATE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

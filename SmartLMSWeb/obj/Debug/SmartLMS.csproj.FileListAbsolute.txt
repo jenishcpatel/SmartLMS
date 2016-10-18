@@ -1,0 +1,8 @@
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\bin\SmartLMSWeb.dll
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\bin\SmartLMSWeb.pdb
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\bin\LibApp.dll
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\bin\Oracle.DataAccess.dll
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\bin\LibApp.pdb
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\obj\Debug\SmartLMS.csprojResolveAssemblyReference.cache
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\obj\Debug\SmartLMSWeb.dll
+E:\Gaurav\Library\SmartLMS\SmartLMSWeb\obj\Debug\SmartLMSWeb.pdb
