@@ -35,7 +35,7 @@
       </Query>
       <rd:DataSetInfo>
         <rd:DataSetName>dsPaidUser</rd:DataSetName>
-        <rd:SchemaPath>E:\Gaurav\Library\SmartLMS\SmartLMSWeb\RDLC\dsPaidUser.xsd</rd:SchemaPath>
+        <rd:SchemaPath>E:\Gaurav\Library\SmartLMS\SmartLMS\RDLC\dsPaidUser.xsd</rd:SchemaPath>
         <rd:TableName>dtPaidUser</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

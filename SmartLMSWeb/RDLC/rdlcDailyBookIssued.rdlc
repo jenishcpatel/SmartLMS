@@ -39,7 +39,7 @@
       </Query>
       <rd:DataSetInfo>
         <rd:DataSetName>dsDailyReport</rd:DataSetName>
-        <rd:SchemaPath>E:\Gaurav\Library\SmartLMS\SmartLMSWeb\RDLC\dsDailyReport.xsd</rd:SchemaPath>
+        <rd:SchemaPath>E:\Gaurav\Library\SmartLMS\SmartLMS\RDLC\dsDailyReport.xsd</rd:SchemaPath>
         <rd:TableName>dtDaily</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

@@ -179,7 +179,7 @@ namespace LibApp
                 //cmd.InitialLONGFetchSize = 20000;
                 cmd.CommandText = "PRC_GET_ALREADY_ISSUED";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("P_EMPID", MySqlDbType.Int32).Value = this.EmployeeId;
+                cmd.Parameters.Add("P_EmployeeId", MySqlDbType.Int32).Value = this.EmployeeId;
                 //cmd.Parameters.Add("P_O", MySqlDbType.RefCursor).Direction = ParameterDirection.Output;
 
                 da.SelectCommand = cmd;

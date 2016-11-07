@@ -7,8 +7,10 @@
 <head runat="server">
     <title>Issue Book</title>
     <link href="../css/simple-sidebar.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../IMAGES/icon_aNT_icon.ico"/>
 </head>
 <body>
+    <div class="table-record">
     <form id="form1" runat="server">
     <div>
         <div>
@@ -121,6 +123,12 @@
                                                                                                             <ItemStyle HorizontalAlign="Center" />
                                                                                                         </asp:BoundField>
                                                                                                         <asp:BoundField HeaderText="Mobile No" DataField="mobile_no">
+                                                                                                            <ItemStyle HorizontalAlign="Center" />
+                                                                                                        </asp:BoundField>
+                                                                                                        <asp:BoundField HeaderText="Mode of User" DataField="PAYMENT_TYPE">
+                                                                                                            <ItemStyle HorizontalAlign="Center" />
+                                                                                                        </asp:BoundField>
+                                                                                                        <asp:BoundField HeaderText="Paid Amount" DataField="PAID_AMOUNT">
                                                                                                             <ItemStyle HorizontalAlign="Center" />
                                                                                                         </asp:BoundField>
                                                                                                     </Columns>
@@ -303,5 +311,6 @@
         </div>
     </div>
     </form>
+    </div>
 </body>
 </html>

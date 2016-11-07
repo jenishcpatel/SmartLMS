@@ -9,7 +9,7 @@ using System.Data;
 using Microsoft.Reporting.WebForms;
 
 
-namespace SmartLMSWeb.RDLC
+namespace SmartLMS.RDLC
 {
     public partial class frmReportViewer : System.Web.UI.Page
     {
@@ -23,17 +23,12 @@ namespace SmartLMSWeb.RDLC
                 {
                     //DateTime dtfrom;
                     //DateTime dtTo;
-
                     //dtfrom = Convert.ToDateTime(Session["FromDate"].ToString());
                     //dtTo = Convert.ToDateTime(Session["ToDate"].ToString());
-
-
                     objreport.FromDate = DateTime.ParseExact(Session["FromDate"].ToString(), "dd/MM/yyyy", null);
                     objreport.ToDate = DateTime.ParseExact(Session["ToDate"].ToString(), "dd/MM/yyyy", null);
-
                     //objreport.FromDate = dtfrom;
                     //objreport.ToDate = dtTo;
-
                     ds = objreport.ActivePaidUsers();
                     ReportViewer1.ProcessingMode = ProcessingMode.Local;
                     ReportViewer1.LocalReport.ReportPath = Server.MapPath("../RDLC/rdlcPaidUserList.rdlc");
@@ -52,9 +47,6 @@ namespace SmartLMSWeb.RDLC
                     ReportDataSource datasource = new ReportDataSource("dsBookIssue", ds.Tables[0]);
                     ReportViewer1.LocalReport.DataSources.Clear();
                     ReportViewer1.LocalReport.DataSources.Add(datasource);
-                  
-                   
-
                 }
 
                 else if (Session["KEY"].ToString() == "3")
@@ -67,11 +59,8 @@ namespace SmartLMSWeb.RDLC
                     ReportDataSource datasource = new ReportDataSource("dsReturnBook", ds.Tables[0]);
                     ReportViewer1.LocalReport.DataSources.Clear();
                     ReportViewer1.LocalReport.DataSources.Add(datasource);
-
                 }
-
                 else if (Session["KEY"].ToString() == "4")
-               
                 {
                     objreport.FromDate = DateTime.ParseExact(Session["FromDate"].ToString(), "dd/MM/yyyy", null);
                     objreport.ToDate = DateTime.ParseExact(Session["ToDate"].ToString(), "dd/MM/yyyy", null);
@@ -82,12 +71,7 @@ namespace SmartLMSWeb.RDLC
                     //ReportViewer1.LocalReport.DataSources.Clear();
                     //ReportViewer1.LocalReport.DataSources.Add(datasource);               
                 }
-
             }
-
         }
-
-
-        
     }
 }

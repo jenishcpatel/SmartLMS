@@ -9,7 +9,7 @@ using System.Data;
 
 
 
-namespace SmartLMSWeb.SmartLMS
+namespace SmartLMS.SmartLMS
 {
     public partial class frmAddCategory : System.Web.UI.Page
     {
@@ -17,12 +17,15 @@ namespace SmartLMSWeb.SmartLMS
         {
             if (!IsPostBack)
             {
-                lblUser.Text = Session["USER_NAME"].ToString();
-                lblRole.Text = Session["RoleName"].ToString();
-
-                BINDGRID();
-
-
+                if (Session["USER_NAME"] !=null && Session["RoleName"] !=null)
+                {
+                    lblUser.Text = Session["USER_NAME"].ToString();
+                    lblRole.Text = Session["RoleName"].ToString();
+                    BINDGRID();
+                }else
+                {
+                    Response.Redirect("~/SmartLMS/frmLogin.aspx");
+                }
             }
         }
 
@@ -31,7 +34,6 @@ namespace SmartLMSWeb.SmartLMS
             try
             {
                 csBook objbook = new csBook();
-
                 if (txtcategory.Text.Length > 0)
                 {
                     objbook.CategoryName = txtcategory.Text;
@@ -41,22 +43,13 @@ namespace SmartLMSWeb.SmartLMS
                     Response.Write("<script>alert('Kindly Enter the Category Name');</script>");
                     return;
                 }
-
-                if (chkisActive.Checked == true)
-                {
-                    objbook.IsActive = "Y";
-                }
-                else
-                {
-                    objbook.IsActive = "N";
-                }
-
+                objbook.IsActive =chkisActive.Checked?"Y":"N";
                 objbook.insertCategory();
                 BINDGRID();
                 clear();
                 Response.Write("<script>alert('Category Added Sucessfully');</script>");
             }
-            catch
+            catch (Exception ex)
             {
                 Response.Write("<script>alert('Error In Insert');</script>");
             }
@@ -65,31 +58,43 @@ namespace SmartLMSWeb.SmartLMS
 
         public void BINDGRID()
         {
-            csBook OBJBOOK = new csBook();
-            DataSet DS = new DataSet();
-            DS = OBJBOOK.GetCategoryList();
-            gvDisplay.DataSource = DS;
-            gvDisplay.DataBind();
+            try
+            {
+                csBook OBJBOOK = new csBook();
+                DataSet DS = new DataSet();
+                DS = OBJBOOK.GetCategoryList();
+                gvDisplay.DataSource = DS;
+                gvDisplay.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
+            }
         }
 
         protected void gvDisplay_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            csBook OBJBOOK = new csBook();
-            GridViewRow row = (GridViewRow)gvDisplay.Rows[e.RowIndex];
-            Int32 CAT = Convert.ToInt32(gvDisplay.DataKeys[e.RowIndex].Value);
-
-            OBJBOOK.DeleteCategory(CAT);
-            BINDGRID();
-            Response.Write("<script>alert('Category Deleted Sucessfully');</script>");
-
-            Update.Visible = false;
-            SaveAccountInfo.Visible = true;
-            clear();
-
+            try
+            {
+                csBook OBJBOOK = new csBook();
+                GridViewRow row = (GridViewRow)gvDisplay.Rows[e.RowIndex];
+                Int32 CAT = Convert.ToInt32(gvDisplay.DataKeys[e.RowIndex].Value);
+                OBJBOOK.DeleteCategory(CAT);
+                BINDGRID();
+                Response.Write("<script>alert('Category Deleted Sucessfully');</script>");
+                Update.Visible = false;
+                SaveAccountInfo.Visible = true;
+                clear();
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
+            }
         }
 
         protected void gvDisplay_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            try { 
             if (e.CommandName == "Select")
             {
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
@@ -99,16 +104,13 @@ namespace SmartLMSWeb.SmartLMS
                 txtcategory.Text = gvDisplay.DataKeys[rowIndex].Values[1].ToString();
                 SaveAccountInfo.Visible = false;
                 Update.Visible = true;
-                if (gvDisplay.DataKeys[rowIndex].Values[2].ToString() == "Y")
-                {
-                    chkisActive.Checked = true;
-                }
-                else
-                {
-                    chkisActive.Checked = false;
-                }
+                chkisActive.Checked = gvDisplay.DataKeys[rowIndex].Values[2].ToString() == "Y"?true:false;
             }
-            
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
+            }
         }
 
         protected void Update_Click(object sender, ImageClickEventArgs e)
@@ -127,14 +129,7 @@ namespace SmartLMSWeb.SmartLMS
                     return;
                 }
 
-                if (chkisActive.Checked == true)
-                {
-                    objbook.IsActive = "Y";
-                }
-                else
-                {
-                    objbook.IsActive = "N";
-                }
+                objbook.IsActive = chkisActive.Checked ? "Y" : "N";
 
                 Int32 CatId = Convert.ToInt32(Session["Cat_ID"].ToString());
                 objbook.UpdateCategory(CatId);
@@ -145,11 +140,10 @@ namespace SmartLMSWeb.SmartLMS
                 Session["Cat_ID"] = "";
                 Response.Write("<script>alert('Category Updated Sucessfully');</script>");
             }
-            catch
+            catch(Exception ex)
             {
                 Response.Write("<script>alert('Error In Update');</script>");
             }
-
          }
 
 
@@ -169,15 +163,15 @@ namespace SmartLMSWeb.SmartLMS
 
         protected void gvDisplay_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            gvDisplay.PageIndex = e.NewPageIndex;
-            BINDGRID();
-
+            try
+            {
+                gvDisplay.PageIndex = e.NewPageIndex;
+                BINDGRID();
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
+            }
         }
-
-        
-
-        
-
-        
     }
 }

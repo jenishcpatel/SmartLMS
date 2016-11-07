@@ -6,9 +6,10 @@
 <head runat="server">
     <title></title>
        <link href="../css/simple-sidebar.css" rel="stylesheet" type="text/css" />
+       <link rel="shortcut icon" href="../IMAGES/icon_aNT_icon.ico"/>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" class="table-record">
      <div>
         <div>
             <asp:Image ID="Image1" runat="server" ImageUrl="~/IMAGES/logo1.png" Width="100%"

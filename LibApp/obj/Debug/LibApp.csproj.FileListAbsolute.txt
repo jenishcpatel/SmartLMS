@@ -33,3 +33,15 @@ D:\SmartLMS\LibApp\bin\MySql.Data.dll
 D:\SmartLMS\LibApp\bin\MySql.Data.Entity.EF6.dll
 D:\SmartLMS\LibApp\bin\EntityFramework.xml
 D:\SmartLMS\LibApp\bin\EntityFramework.SqlServer.xml
+D:\Working\jenishcpatel\SmartLMS\LibApp\bin\LibApp.dll.config
+D:\Working\jenishcpatel\SmartLMS\LibApp\bin\LibApp.dll
+D:\Working\jenishcpatel\SmartLMS\LibApp\bin\LibApp.pdb
+D:\Working\jenishcpatel\SmartLMS\LibApp\bin\EntityFramework.dll
+D:\Working\jenishcpatel\SmartLMS\LibApp\bin\EntityFramework.SqlServer.dll
+D:\Working\jenishcpatel\SmartLMS\LibApp\bin\MySql.Data.dll
+D:\Working\jenishcpatel\SmartLMS\LibApp\bin\MySql.Data.Entity.EF6.dll
+D:\Working\jenishcpatel\SmartLMS\LibApp\bin\EntityFramework.xml
+D:\Working\jenishcpatel\SmartLMS\LibApp\bin\EntityFramework.SqlServer.xml
+D:\Working\jenishcpatel\SmartLMS\LibApp\obj\Debug\LibApp.csproj.ResolveComReference.cache
+D:\Working\jenishcpatel\SmartLMS\LibApp\obj\Debug\LibApp.dll
+D:\Working\jenishcpatel\SmartLMS\LibApp\obj\Debug\LibApp.pdb

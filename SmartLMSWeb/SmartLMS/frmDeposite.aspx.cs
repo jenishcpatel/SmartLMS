@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using LibApp;
 using System.Data;
 
-namespace SmartLMSWeb.SmartLMS
+namespace SmartLMS.SmartLMS
 {
     public partial class frmDeposite : System.Web.UI.Page
     {
@@ -15,6 +15,10 @@ namespace SmartLMSWeb.SmartLMS
         {
             if (!IsPostBack)
             {
+                if (Session["USER_NAME"] == null && Session["RoleName"] == null)
+                {
+                    Response.Redirect("~/SmartLMS/frmLogin.aspx");
+                }
 
             }
 
@@ -22,42 +26,40 @@ namespace SmartLMSWeb.SmartLMS
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-            cDeposite objcdeposite = new cDeposite();
-
-            if (txtSearchEmp.Text.Length > 0)
-            {
-                objcdeposite.EmployeeId = Convert.ToInt32(txtSearchEmp.Text);
-                Session["EMPID"] = objcdeposite.EmployeeId;
-
-            }
-            else
-            {
-                Response.Write("<script>alert('Kindly Enter the Employee Id');</script>");
-                return;
-            }
-
-            DataSet ds = new DataSet();
-            ds = objcdeposite.GetEmpList();
-            gvDisplay.DataSource = ds;
-            gvDisplay.DataBind();
-
-
-        }
-
-        protected void SaveAccountInfo_Click(object sender, ImageClickEventArgs e)
-        {
-
             try
             {
                 cDeposite objcdeposite = new cDeposite();
 
+                if (txtSearchEmp.Text.Length > 0)
+                {
+                    objcdeposite.EmployeeId = Convert.ToInt32(txtSearchEmp.Text);
+                    Session["EMPID"] = objcdeposite.EmployeeId;
+                }
+                else
+                {
+                    Response.Write("<script>alert('Kindly Enter the Employee Id');</script>");
+                    return;
+                }
+                DataSet ds = new DataSet();
+                ds = objcdeposite.GetEmpList();
+                gvDisplay.DataSource = ds;
+                gvDisplay.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
+            }
+        }
+
+        protected void SaveAccountInfo_Click(object sender, ImageClickEventArgs e)
+        {
+            try
+            {
+                cDeposite objcdeposite = new cDeposite();
                 objcdeposite.EmployeeId = Convert.ToInt32(Session["EMPID"].ToString());
-
-
                 if (txtDepositeAmt.Text.Length > 0)
                 {
                     objcdeposite.DepositeAmount = Convert.ToInt32(txtDepositeAmt.Text);
-
                 }
                 else
                 {
@@ -78,8 +80,7 @@ namespace SmartLMSWeb.SmartLMS
                 objcdeposite.UpdateDeposite();
                 Response.Write("<script>alert('Deposited Sucessfully');</script>");
             }
-
-            catch
+            catch(Exception ex)
             {
                 Response.Write("<script>alert('Insert Unsucessfull');</script>");
                 return;

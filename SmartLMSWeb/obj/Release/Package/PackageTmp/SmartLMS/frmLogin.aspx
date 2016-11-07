@@ -20,6 +20,7 @@
             }
         }
 </script>
+<link rel="shortcut icon" href="../IMAGES/icon_aNT_icon.ico"/>
 </head>
 <body>
     <form id="form1" runat="server">

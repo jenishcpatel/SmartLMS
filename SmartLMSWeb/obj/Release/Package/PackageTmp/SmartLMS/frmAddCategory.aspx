@@ -7,6 +7,7 @@
 <head runat="server">
     <title>Add Category</title>
     <link href="../css/simple-sidebar.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../IMAGES/icon_aNT_icon.ico"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -121,9 +122,11 @@
                                                                                 <table width="100%">
                                                                                     <tr>
                                                                                         <td style="width: 100%;" align="center">
-                                                                                            <asp:GridView ID="gvDisplay" runat="server" AutoGenerateColumns="False" Width="100%" Font-Size="14px" 
+                                                                                            <asp:GridView ID="gvDisplay" runat="server" AutoGenerateColumns="False" 
+                                                                                                Width="100%" Font-Size="14px" 
                                                                                                 AllowPaging="True" PageSize="5" OnRowDeleting="gvDisplay_RowDeleting" DataKeyNames="book_cat_id,categorie_name,active"
-                                                                                                OnRowCommand="gvDisplay_RowCommand">
+                                                                                                OnRowCommand="gvDisplay_RowCommand" 
+                                                                                                onpageindexchanging="gvDisplay_PageIndexChanging">
                                                                                                 <Columns>
                                                                                                     <asp:BoundField HeaderText="Category Name" DataField="categorie_name" ><ItemStyle HorizontalAlign="Center" /> </asp:BoundField>
                                                                                                     <asp:BoundField HeaderText="Is Active" DataField="active" > <ItemStyle HorizontalAlign="Center" /> </asp:BoundField>

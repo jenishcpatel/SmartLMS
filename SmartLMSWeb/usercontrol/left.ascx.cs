@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace SmartLMSWeb.usercontrol
+namespace SmartLMS.usercontrol
 {
     public partial class left : System.Web.UI.UserControl
     {

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using LibApp;
 using System.Data;
 
-namespace SmartLMSWeb.SmartLMS
+namespace SmartLMS.SmartLMS
 {
     public partial class frmDashBoard : System.Web.UI.Page
     {
@@ -15,15 +15,21 @@ namespace SmartLMSWeb.SmartLMS
         {
             if (!IsPostBack)
             {
-                lblUser.Text = Session["USER_NAME"].ToString();
-                lblRole.Text=Session["RoleName"].ToString();
-                getcountMail();
-                getDashBoardCount();
-                if (Session["RoleName"].ToString() == "Admin")
+                if (Session["USER_NAME"] != null && Session["RoleName"] != null)
                 {
-                    dvAdmin.Visible = true;
+                    lblUser.Text = Session["USER_NAME"].ToString();
+                    lblRole.Text = Session["RoleName"].ToString();
+                    getcountMail();
+                    getDashBoardCount();
+                    if (Session["RoleName"].ToString() == "Admin")
+                    {
+                        dvAdmin.Visible = true;
+                    }
                 }
-
+                else
+                {
+                    Response.Redirect("~/SmartLMS/frmLogin.aspx");
+                }
             }
         }
 
@@ -72,22 +78,34 @@ namespace SmartLMSWeb.SmartLMS
 
         private void getcountMail()
         {
-            csBook objbook = new csBook();
-            DataSet ds = new DataSet();
-            ds = objbook.GetMailCount();
-            lblMail.Text = ds.Tables[0].Rows[0]["COUNTMAIL"].ToString();
-            
+            try
+            {
+                csBook objbook = new csBook();
+                DataSet ds = new DataSet();
+                ds = objbook.GetMailCount();
+                lblMail.Text = ds.Tables[0].Rows[0]["COUNTMAIL"].ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
+            }
         }
 
         private void getDashBoardCount()
         {
-            csBook objbook = new csBook();
-            DataSet ds = new DataSet();
-            ds = objbook.GetDashBoardCount();
-            lblBookIssued.Text = ds.Tables[0].Rows[0]["TotalBookIssued"].ToString();
-            lblReturnBook.Text = ds.Tables[0].Rows[0]["TotalBookReturn"].ToString();
-            lblFine.Text = ds.Tables[0].Rows[0]["FINEAMOUNT"].ToString();
-
+            try
+            {
+                csBook objbook = new csBook();
+                DataSet ds = new DataSet();
+                ds = objbook.GetDashBoardCount();
+                lblBookIssued.Text = ds.Tables[0].Rows[0]["TotalBookIssued"].ToString();
+                lblReturnBook.Text = ds.Tables[0].Rows[0]["TotalBookReturn"].ToString();
+                lblFine.Text = ds.Tables[0].Rows[0]["FINEAMOUNT"].ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
+            }
         }
 
         protected void ImageButton10_Click(object sender, ImageClickEventArgs e)
@@ -109,7 +127,5 @@ namespace SmartLMSWeb.SmartLMS
         {
             Response.Redirect("~/SmartLMS/frmAddDesignation.aspx");
         }
-
-       
     }
 }

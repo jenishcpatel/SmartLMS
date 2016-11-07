@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SmartLMSWeb.usercontrol {
+namespace SmartLMS.usercontrol {
     
     
     public partial class left {

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using LibApp;
 
-namespace SmartLMSWeb.SmartLMS
+namespace SmartLMS.SmartLMS
 {
     public partial class frmReturnBook : System.Web.UI.Page
     {
@@ -15,18 +15,23 @@ namespace SmartLMSWeb.SmartLMS
         {
             if (!IsPostBack)
             {
-                lblUser.Text = Session["USER_NAME"].ToString();
-                lblRole.Text = Session["RoleName"].ToString();
-                
+                if (Session["USER_NAME"] != null && Session["RoleName"]!=null)
+                {
+                    lblUser.Text = Session["USER_NAME"].ToString();
+                    lblRole.Text = Session["RoleName"].ToString();
+                }
+                else
+                {
+                    Response.Redirect("~/SmartLMS/frmLogin.aspx");
+                }
             }
         }
 
         protected void btnEmp_Click(object sender, ImageClickEventArgs e)
         {
+            try { 
             cTransactionIssue objcTran = new cTransactionIssue();
-
-            if (txtSearchEmp.Text.Length > 0)
-            {
+            if (txtSearchEmp.Text.Length > 0){
                 objcTran.EmployeeId = Convert.ToInt32(txtSearchEmp.Text);
                 Session["EMPID"] = txtSearchEmp.Text;
 
@@ -36,12 +41,10 @@ namespace SmartLMSWeb.SmartLMS
                 Response.Write("<script>alert('Kindly Enter the Employee Id');</script>");
                 return;
             }
-
             DataSet ds = new DataSet();
             ds = objcTran.GetEmpList();
             gvDisplay.DataSource = ds;
             gvDisplay.DataBind();
-
 
             DataSet ds1 = new DataSet();
             ds1 = objcTran.GetIssuedEmpList();
@@ -51,8 +54,6 @@ namespace SmartLMSWeb.SmartLMS
                 gvAlredayIssued.DataBind();
                 DivAlreadyIssued.Visible = true;
             }
-
-
             DataSet ds2 = new DataSet();
             ds2 = objcTran.GetFineSummary();
             if (ds2.Tables[0].Rows.Count > 0)
@@ -62,10 +63,11 @@ namespace SmartLMSWeb.SmartLMS
                 divFine.Visible = true;
 
             }
-            
-
-           
-
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
+            }
 
         }
 
@@ -79,9 +81,6 @@ namespace SmartLMSWeb.SmartLMS
                     Response.Write("<script>alert('Kindly Enter the Remarks');</script>");
                     return;
                 }
-
-
-
                 cTransactionIssue objcTran = new cTransactionIssue();
                 objcTran.EmployeeId = Convert.ToInt32(Session["EMPID"].ToString());
                 objcTran.BookID = Convert.ToInt32(Session["BookID"].ToString());
@@ -110,6 +109,7 @@ namespace SmartLMSWeb.SmartLMS
 
         protected void gvAlredayIssued_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            try { 
             if (e.CommandName == "Select")
             {
                 cTransactionIssue objcTran = new cTransactionIssue();
@@ -133,7 +133,11 @@ namespace SmartLMSWeb.SmartLMS
                     txtFineAmount.Text = "0";
                 }
             }
-                
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
+            }
         }
 
         protected void lnkSingOut_Click(object sender, EventArgs e)
@@ -146,41 +150,61 @@ namespace SmartLMSWeb.SmartLMS
 
         protected void gvAlredayIssued_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            gvAlredayIssued.PageIndex = e.NewPageIndex;
-            databindforall();
+            try
+            {
+                gvAlredayIssued.PageIndex = e.NewPageIndex;
+                databindforall();
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
+            }
         }
 
 
         private void databind()
         {
-            cTransactionIssue objcTran = new cTransactionIssue();
-            DataSet ds1 = new DataSet();
-            objcTran.EmployeeId=Convert.ToInt32(Session["EMPID"]);
-            DataSet ds2 = new DataSet();
-            ds2 = objcTran.GetFineSummaryAll();
-            if (ds2.Tables[0].Rows.Count > 0)
+            try
             {
-                gvFine.DataSource = ds2;
-                gvFine.DataBind();
-                divFine.Visible = true;
+                cTransactionIssue objcTran = new cTransactionIssue();
+                DataSet ds1 = new DataSet();
+                objcTran.EmployeeId = Convert.ToInt32(Session["EMPID"]);
+                DataSet ds2 = new DataSet();
+                ds2 = objcTran.GetFineSummaryAll();
+                if (ds2.Tables[0].Rows.Count > 0)
+                {
+                    gvFine.DataSource = ds2;
+                    gvFine.DataBind();
+                    divFine.Visible = true;
 
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
             }
         }
 
 
         private void databindforall()
         {
-            cTransactionIssue objcTran = new cTransactionIssue();
-            objcTran.EmployeeId = Convert.ToInt32(Session["EMPID"]);
-            DataSet ds2 = new DataSet();
-            ds2 = objcTran.GetIssuedEmpList();
-            if (ds2.Tables[0].Rows.Count > 0)
+            try
             {
-                gvAlredayIssued.DataSource = ds2;
-                gvAlredayIssued.DataBind();
-                DivAlreadyIssued.Visible = true;
+                cTransactionIssue objcTran = new cTransactionIssue();
+                objcTran.EmployeeId = Convert.ToInt32(Session["EMPID"]);
+                DataSet ds2 = new DataSet();
+                ds2 = objcTran.GetIssuedEmpList();
+                if (ds2.Tables[0].Rows.Count > 0)
+                {
+                    gvAlredayIssued.DataSource = ds2;
+                    gvAlredayIssued.DataBind();
+                    DivAlreadyIssued.Visible = true;
+                }
             }
-           
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
+            }
         }
     }
 }

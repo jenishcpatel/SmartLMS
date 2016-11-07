@@ -9,6 +9,7 @@
     <link type="text/css" href="../css/ui-lightness/jquery-ui-1.8.19.custom.css" rel="stylesheet" />
     <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="../js/jquery-ui-1.8.19.custom.min.js"></script>
+    <link rel="shortcut icon" href="../IMAGES/icon_aNT_icon.ico"/>
     <script type="text/javascript">
         $(function () {
             $("#txtfrom").datepicker({ dateFormat: "dd/mm/yy" });
@@ -100,8 +101,8 @@
                                                                                             <asp:UpdatePanel ID="UpdatePanel8" runat="server" UpdateMode="Always">
                                                                                                 <ContentTemplate>
                                                                                                     <%--<asp:TextBox ID="txtHireDate" runat="server"></asp:TextBox>--%>
-                                                                                                    &nbsp;&nbsp<input id="txtfrom" runat="server" maxlength="12" name="txtDOJ" tabindex="4"
-                                                                                                        type="text" value="dd/MM/yyyy" style="height: 30px; width: 130px"/>
+                                                                                                    &nbsp;&nbsp<input id="txtfrom" runat="server" maxlength="12"  tabindex="4"
+                                                                                                        type="text"  style="height: 30px; width: 130px"/>
                                                                                                     &nbsp;
                                                                                                 </ContentTemplate>
                                                                                             </asp:UpdatePanel>
@@ -113,7 +114,7 @@
                                                                                             <asp:UpdatePanel ID="UpdatePanel9" runat="server" UpdateMode="Always">
                                                                                                 <ContentTemplate>
                                                                                                     <%--<asp:TextBox ID="txtRelvDate" runat="server"></asp:TextBox>--%>
-                                                                                                    &nbsp;&nbsp<input id="txtTo" value="dd/MM/yyyy" runat="server" maxlength="12" name="txtDOR"
+                                                                                                    &nbsp;&nbsp<input id="txtTo"  runat="server" maxlength="12" 
                                                                                                         tabindex="4" type="text" style="height: 30px; width: 130px" />
                                                                                                     &nbsp;&nbsp;
                                                                                                 </ContentTemplate>
@@ -146,7 +147,7 @@
                                                                                         <td align="center">
                                                                                             <asp:Button ID="btnBookIssued" runat="server" Text="Book Issued" Font-Bold="true"
                                                                                                 ForeColor="Black" Height="40
-                                                                                            px" Width="200px" onclick="btnBookIssued_Click" />
+                                                                                            px" Width="200px" onclick="btnBookIssued_Click"   />
                                                                                         </td>
                                                                                     </tr>
 

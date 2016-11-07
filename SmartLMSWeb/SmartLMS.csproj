@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99414E98-781D-4823-8995-FDBC85DF336A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartLMS</RootNamespace>
+    <AssemblyName>SmartLMS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DeployIisAppPath />
+    <IncludeIisSettings>true</IncludeIisSettings>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>IMAGES\logo1_UXi_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.VS2010.10.0.40219.1\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportViewer.WebForms.VS2010.10.0.40219.1\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.VS2010.10.0.40219.1\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\simple-sidebar.css" />
+    <Content Include="css\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="css\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="css\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="css\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="css\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="css\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="css\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="css\ui-lightness\jquery-ui-1.8.19.custom.css" />
+    <Content Include="IMAGES\1443213433_personal.ico" />
+    <Content Include="IMAGES\1443213515_Profile.png" />
+    <Content Include="IMAGES\1443213717_user-group-new.png" />
+    <Content Include="IMAGES\1443214151_edit.png" />
+    <Content Include="IMAGES\1453158897_book.png" />
+    <Content Include="IMAGES\1453159257_address-book-alt.png" />
+    <Content Include="IMAGES\1453159544_architecture-interior-13.png" />
+    <Content Include="IMAGES\1453159902_library.png" />
+    <Content Include="IMAGES\1453160134_vector_65_04.png" />
+    <Content Include="IMAGES\1453160287_checked-checklist-notepad.png" />
+    <Content Include="IMAGES\1453648662_button_45.png" />
+    <Content Include="IMAGES\department.png" />
+    <Content Include="IMAGES\Designation.png" />
+    <Content Include="IMAGES\icon_aNT_icon.ico" />
+    <Content Include="IMAGES\logo1_UXi_icon.ico" />
+    <Content Include="IMAGES\OnlineApplication.png" />
+    <Content Include="IMAGES\admin-logo.png" />
+    <Content Include="IMAGES\admin_top_bg.jpg" />
+    <Content Include="IMAGES\ajax-loader.gif" />
+    <Content Include="IMAGES\arrow_left_link.png" />
+    <Content Include="IMAGES\b-inactive.gif" />
+    <Content Include="IMAGES\BookBackground.jpg" />
+    <Content Include="IMAGES\botoom.png" />
+    <Content Include="IMAGES\employeeDetails.gif" />
+    <Content Include="IMAGES\footer.png" />
+    <Content Include="IMAGES\issue.png" />
+    <Content Include="IMAGES\login_icon_administrator.png" />
+    <Content Include="IMAGES\login_icon_administrator_s.png" />
+    <Content Include="IMAGES\login_title_administrator.png" />
+    <Content Include="IMAGES\Logo.png" />
+    <Content Include="IMAGES\logo1.png" />
+    <Content Include="IMAGES\noimage.jpg" />
+    <Content Include="IMAGES\search.png" />
+    <Content Include="IMAGES\search1.png" />
+    <Content Include="IMAGES\sedow_left.png" />
+    <Content Include="IMAGES\sedow_right.png" />
+    <Content Include="IMAGES\sedow_top.png" />
+    <Content Include="IMAGES\sedow_top_inner.png" />
+    <Content Include="IMAGES\submit.png" />
+    <Content Include="IMAGES\update.gif" />
+    <Content Include="js\jquery-ui-1.8.19.custom.min.js" />
+    <Content Include="js\sideviewmenu.js" />
+    <Content Include="js\sideviewmenu.css" />
+    <Content Include="RDLC\frmReportViewer.aspx" />
+    <Content Include="usercontrol\left.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="SmartLMS\frmAddCategory.aspx" />
+    <Content Include="SmartLMS\frmAddDepartment.aspx" />
+    <Content Include="SmartLMS\frmAddDesignation.aspx" />
+    <Content Include="SmartLMS\frmBookEntry.aspx" />
+    <Content Include="SmartLMS\frmDashBoard.aspx" />
+    <Content Include="SmartLMS\frmDeposite.aspx" />
+    <Content Include="SmartLMS\frmEmployeeDashboard.aspx" />
+    <Content Include="SmartLMS\frmGetOnlineRequest.aspx" />
+    <Content Include="SmartLMS\frmLibInbox.aspx" />
+    <Content Include="SmartLMS\frmLibrarianDashboard.aspx" />
+    <Content Include="SmartLMS\frmLogin.aspx" />
+    <Content Include="SmartLMS\frmOnlineBookIssue.aspx" />
+    <Content Include="SmartLMS\frmReport.aspx" />
+    <Content Include="SmartLMS\frmRequestForBook.aspx" />
+    <Content Include="SmartLMS\frmReturnBook.aspx" />
+    <Content Include="SmartLMS\frmRoleSelection.aspx" />
+    <Content Include="SmartLMS\frmSearchBook.aspx" />
+    <Content Include="SmartLMS\frmTransactions.aspx" />
+    <Content Include="SmartLMS\frmUserCreation.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RDLC\dsDailyReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDailyReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RDLC\dsIssuedBook.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsIssuedBook.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RDLC\dsPaidUser.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPaidUser.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RDLC\frmReportViewer.aspx.cs">
+      <DependentUpon>frmReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RDLC\frmReportViewer.aspx.designer.cs">
+      <DependentUpon>frmReportViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\left.ascx.cs">
+      <DependentUpon>left.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usercontrol\left.ascx.designer.cs">
+      <DependentUpon>left.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmAddCategory.aspx.cs">
+      <DependentUpon>frmAddCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmAddCategory.aspx.designer.cs">
+      <DependentUpon>frmAddCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmAddDepartment.aspx.cs">
+      <DependentUpon>frmAddDepartment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmAddDepartment.aspx.designer.cs">
+      <DependentUpon>frmAddDepartment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmAddDesignation.aspx.cs">
+      <DependentUpon>frmAddDesignation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmAddDesignation.aspx.designer.cs">
+      <DependentUpon>frmAddDesignation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmBookEntry.aspx.cs">
+      <DependentUpon>frmBookEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmBookEntry.aspx.designer.cs">
+      <DependentUpon>frmBookEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmDashBoard.aspx.cs">
+      <DependentUpon>frmDashBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmDashBoard.aspx.designer.cs">
+      <DependentUpon>frmDashBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmDeposite.aspx.cs">
+      <DependentUpon>frmDeposite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmDeposite.aspx.designer.cs">
+      <DependentUpon>frmDeposite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmEmployeeDashboard.aspx.cs">
+      <DependentUpon>frmEmployeeDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmEmployeeDashboard.aspx.designer.cs">
+      <DependentUpon>frmEmployeeDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmGetOnlineRequest.aspx.cs">
+      <DependentUpon>frmGetOnlineRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmGetOnlineRequest.aspx.designer.cs">
+      <DependentUpon>frmGetOnlineRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmLibInbox.aspx.cs">
+      <DependentUpon>frmLibInbox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmLibInbox.aspx.designer.cs">
+      <DependentUpon>frmLibInbox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmLibrarianDashboard.aspx.cs">
+      <DependentUpon>frmLibrarianDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmLibrarianDashboard.aspx.designer.cs">
+      <DependentUpon>frmLibrarianDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmLogin.aspx.cs">
+      <DependentUpon>frmLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmLogin.aspx.designer.cs">
+      <DependentUpon>frmLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmOnlineBookIssue.aspx.cs">
+      <DependentUpon>frmOnlineBookIssue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmOnlineBookIssue.aspx.designer.cs">
+      <DependentUpon>frmOnlineBookIssue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmReport.aspx.cs">
+      <DependentUpon>frmReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmReport.aspx.designer.cs">
+      <DependentUpon>frmReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmRequestForBook.aspx.cs">
+      <DependentUpon>frmRequestForBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmRequestForBook.aspx.designer.cs">
+      <DependentUpon>frmRequestForBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmReturnBook.aspx.cs">
+      <DependentUpon>frmReturnBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmReturnBook.aspx.designer.cs">
+      <DependentUpon>frmReturnBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmRoleSelection.aspx.cs">
+      <DependentUpon>frmRoleSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmRoleSelection.aspx.designer.cs">
+      <DependentUpon>frmRoleSelection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmSearchBook.aspx.cs">
+      <DependentUpon>frmSearchBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmSearchBook.aspx.designer.cs">
+      <DependentUpon>frmSearchBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmTransactions.aspx.cs">
+      <DependentUpon>frmTransactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmTransactions.aspx.designer.cs">
+      <DependentUpon>frmTransactions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SmartLMS\frmUserCreation.aspx.cs">
+      <DependentUpon>frmUserCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmartLMS\frmUserCreation.aspx.designer.cs">
+      <DependentUpon>frmUserCreation.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="fonts\glyphicons-halflings-regular.svg" />
+    <None Include="fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RDLC\dsDailyReport.xsc">
+      <DependentUpon>dsDailyReport.xsd</DependentUpon>
+    </None>
+    <None Include="RDLC\dsDailyReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDailyReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RDLC\dsDailyReport.xss">
+      <DependentUpon>dsDailyReport.xsd</DependentUpon>
+    </None>
+    <None Include="RDLC\dsIssuedBook.xsc">
+      <DependentUpon>dsIssuedBook.xsd</DependentUpon>
+    </None>
+    <None Include="RDLC\dsIssuedBook.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsIssuedBook.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RDLC\dsIssuedBook.xss">
+      <DependentUpon>dsIssuedBook.xsd</DependentUpon>
+    </None>
+    <None Include="RDLC\dsPaidUser.xsc">
+      <DependentUpon>dsPaidUser.xsd</DependentUpon>
+    </None>
+    <None Include="RDLC\dsPaidUser.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPaidUser.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RDLC\dsPaidUser.xss">
+      <DependentUpon>dsPaidUser.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibApp\LibApp.csproj">
+      <Project>{C9181480-AC6F-49AF-A723-32B7EF27CD9E}</Project>
+      <Name>LibApp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RDLC\rdlcDailyBookIssued.rdlc" />
+    <Content Include="RDLC\rdlcIssuedBook.rdlc" />
+    <Content Include="RDLC\rdlcPaidUserList.rdlc" />
+    <Content Include="RDLC\rdlcReturnBook.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2483</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2484/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

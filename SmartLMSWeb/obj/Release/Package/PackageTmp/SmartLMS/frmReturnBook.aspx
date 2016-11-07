@@ -7,7 +7,8 @@
 <head runat="server">
     <title>ReturnBook</title>
     <link href="../css/simple-sidebar.css" rel="stylesheet" type="text/css" />
-     <link type="text/css" href="../css/ui-lightness/jquery-ui-1.8.19.custom.css" rel="stylesheet" />
+    <link type="text/css" href="../css/ui-lightness/jquery-ui-1.8.19.custom.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="../IMAGES/icon_aNT_icon.ico" />
     <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="../js/jquery-ui-1.8.19.custom.min.js"></script>
     <script type="text/javascript">
@@ -31,7 +32,7 @@
                 Height="100px" />
         </div>
         <div>
-            <table width="100%">
+            <table width="100%" style="border: 0;">
                 <tr style="background-color: Silver;">
                     <td style="width: 10%;">
                         UserName:
@@ -103,7 +104,7 @@
                                                                                     <table width="100%">
                                                                                         <tr>
                                                                                             <td align="right">
-                                                                                             <asp:Label ID="lblEmp" runat="server" Font-Size="14px" ForeColor="#848484"  Text="Enter Employee ID:"  ></asp:Label>   
+                                                                                                <asp:Label ID="lblEmp" runat="server" Font-Size="14px" ForeColor="#848484" Text="Enter Employee ID:"></asp:Label>
                                                                                             </td>
                                                                                             <td style="width: 100px">
                                                                                                 <asp:TextBox ID="txtSearchEmp" runat="server" Height="30px" Width="130px"></asp:TextBox>
@@ -117,8 +118,8 @@
                                                                                     <table width="100%">
                                                                                         <tr>
                                                                                             <td style="width: 100%;" align="center">
-                                                                                                <asp:GridView ID="gvDisplay" runat="server" AutoGenerateColumns="False" Width="100%" Font-Size="14px"
-                                                                                                    DataKeyNames="EMPLOYEE_ID" AllowPaging="True" PageSize="5">
+                                                                                                <asp:GridView ID="gvDisplay" runat="server" AutoGenerateColumns="False" Width="100%"
+                                                                                                    Font-Size="14px" DataKeyNames="EMPLOYEE_ID" AllowPaging="True" PageSize="5">
                                                                                                     <Columns>
                                                                                                         <asp:BoundField HeaderText="Employee ID" DataField="EMPLOYEE_ID">
                                                                                                             <ItemStyle HorizontalAlign="Center" />
@@ -138,6 +139,12 @@
                                                                                                         <asp:BoundField HeaderText="Mobile No" DataField="mobile_no">
                                                                                                             <ItemStyle HorizontalAlign="Center" />
                                                                                                         </asp:BoundField>
+                                                                                                        <asp:BoundField HeaderText="Mode of User" DataField="PAYMENT_TYPE">
+                                                                                                            <ItemStyle HorizontalAlign="Center" />
+                                                                                                        </asp:BoundField>
+                                                                                                        <asp:BoundField HeaderText="Paid Amount" DataField="PAID_AMOUNT">
+                                                                                                            <ItemStyle HorizontalAlign="Center" />
+                                                                                                        </asp:BoundField>
                                                                                                     </Columns>
                                                                                                 </asp:GridView>
                                                                                             </td>
@@ -155,8 +162,9 @@
                                                                                         <table width="100%">
                                                                                             <tr>
                                                                                                 <td style="width: 100%;" align="center">
-                                                                                                    <asp:GridView ID="gvAlredayIssued" runat="server" AutoGenerateColumns="False" Width="100%" Font-Size="14px"
-                                                                                                        DataKeyNames="ISSUED_ID,BOOK_ID" AllowPaging="True" PageSize="5" OnRowCommand="gvAlredayIssued_RowCommand">
+                                                                                                    <asp:GridView ID="gvAlredayIssued" runat="server" AutoGenerateColumns="False" Width="100%"
+                                                                                                        Font-Size="14px" DataKeyNames="ISSUED_ID,BOOK_ID" AllowPaging="True" PageSize="5"
+                                                                                                        OnRowCommand="gvAlredayIssued_RowCommand" OnPageIndexChanging="gvAlredayIssued_PageIndexChanging">
                                                                                                         <Columns>
                                                                                                             <asp:BoundField HeaderText="Book Name" DataField="book_name">
                                                                                                                 <ItemStyle HorizontalAlign="Center" />
@@ -221,24 +229,27 @@
                                                                                     <table width="100%">
                                                                                         <tr>
                                                                                             <td style="width: 50%" align="right">
-                                                                                                <asp:Label ID="lblReturndate" runat="server" Font-Size="14px" ForeColor="#848484"  Text="Return Date:"  ></asp:Label>
+                                                                                                <asp:Label ID="lblReturndate" runat="server" Font-Size="14px" ForeColor="#848484"
+                                                                                                    Text="Return Date:"></asp:Label>
                                                                                             </td>
                                                                                             <td style="width: 50%">
                                                                                                 <%--<asp:TextBox ID="txtDOB" runat="server"></asp:TextBox>--%>
-                                                                                                <input id="txtReturn" runat="server" maxlength="12" name="txtDobb" tabindex="4" type="text" style="height: 30px; width: 130px" />
+                                                                                                <input id="txtReturn" runat="server" maxlength="12" name="txtDobb" tabindex="4" type="text"
+                                                                                                    style="height: 30px; width: 130px" />
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <td style="width: 50%" align="right">
-                                                                                               <asp:Label ID="lblFineAmount" runat="server" Font-Size="14px" ForeColor="#848484"  Text="Fine Amount:"  ></asp:Label>
+                                                                                                <asp:Label ID="lblFineAmount" runat="server" Font-Size="14px" ForeColor="#848484"
+                                                                                                    Text="Fine Amount:"></asp:Label>
                                                                                             </td>
                                                                                             <td style="width: 50%">
-                                                                                                <asp:TextBox ID="txtFineAmount" runat="server" Height="30px" Width="130px"></asp:TextBox>
+                                                                                                <asp:TextBox ID="txtFineAmount" runat="server" Height="30px" Width="130px" ReadOnly="True"></asp:TextBox>
                                                                                             </td>
                                                                                         </tr>
-                                                                                         <tr>
+                                                                                        <tr>
                                                                                             <td style="width: 50%" align="right">
-                                                                                               <asp:Label ID="lblRemarks" runat="server" Font-Size="14px" ForeColor="#848484"  Text="Remarks:"  ></asp:Label>
+                                                                                                <asp:Label ID="lblRemarks" runat="server" Font-Size="14px" ForeColor="#848484" Text="Remarks:"></asp:Label>
                                                                                             </td>
                                                                                             <td style="width: 50%">
                                                                                                 <asp:TextBox ID="txtRemarks" runat="server" Height="30px" Width="130px"></asp:TextBox>

@@ -6,10 +6,10 @@
 <head runat="server">
     <title>Deposite</title>
     <link href="../css/simple-sidebar.css" rel="stylesheet" type="text/css" />
-    <link href="../css/simple-sidebar.css" rel="stylesheet" type="text/css" />
     <link type="text/css" href="../css/ui-lightness/jquery-ui-1.8.19.custom.css" rel="stylesheet" />
     <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="../js/jquery-ui-1.8.19.custom.min.js"></script>
+    <link rel="shortcut icon" href="../IMAGES/icon_aNT_icon.ico"/>
     <script type="text/javascript">
         $(function () {
             $("#txtDepositeDate").datepicker({ dateFormat: "dd/mm/yy" });

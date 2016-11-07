@@ -6,6 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="shortcut icon" href="../IMAGES/icon_aNT_icon.ico"/>
     <link href="../css/simple-sidebar.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -101,7 +102,8 @@
                                                                                         <tr>
                                                                                             <td style="width: 100%;" align="center">
                                                                                                 <asp:GridView ID="gvBookList" runat="server" AutoGenerateColumns="False" Width="100%"
-                                                                                                    DataKeyNames="book_name" AllowPaging="True" PageSize="5" Font-Size="14px">
+                                                                                                    DataKeyNames="book_name" AllowPaging="True" PageSize="5" Font-Size="14px" onpageindexchanging="gvBookList_PageIndexChanging" 
+                                                                                                    >
                                                                                                     <Columns>
                                                                                                         <asp:BoundField HeaderText="Barcode" DataField="bar_code">
                                                                                                             <ItemStyle HorizontalAlign="Center" />

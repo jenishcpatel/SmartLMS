@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using LibApp;
 using System.Data;
 
-namespace SmartLMSWeb.SmartLMS
+namespace SmartLMS.SmartLMS
 {
     public partial class frmRoleSelection : System.Web.UI.Page
     {
@@ -16,6 +16,10 @@ namespace SmartLMSWeb.SmartLMS
         {
             if (!IsPostBack)
             {
+                if (Session["USER_NAME"] != null && Session["RoleName"] != null)
+                {
+                    Response.Redirect("~/SmartLMS/frmLogin.aspx");
+                }
                 string str = Session["Role"].ToString();
                 //Declare a arraylist for getting comma separated string
                 ArrayList arr = new ArrayList();
@@ -31,41 +35,43 @@ namespace SmartLMSWeb.SmartLMS
                 {
                     drpRole.Items.Insert(i, new ListItem(arr[i].ToString(), (i + 1).ToString()));
                 }
-
-                               
             }
         }
 
         protected void btnGo_Click(object sender, EventArgs e)
         {
-            Session["EmpId"] = Session["USER_NAME"].ToString();
-            if (drpRole.SelectedItem.Text == "Employee")
+            try
             {
-                Session["RoleName"] = "Employee";
-                Session["EMPID"] = Session["EMPLOYEEID"].ToString();
-                Response.Redirect("~/SmartLMS/frmEmployeeDashboard.aspx");
-               
-            }
+                Session["EmpId"] = Session["USER_NAME"].ToString();
+                if (drpRole.SelectedItem.Text == "Employee")
+                {
+                    Session["RoleName"] = "Employee";
+                    Session["EMPID"] = Session["EMPLOYEEID"].ToString();
+                    Response.Redirect("~/SmartLMS/frmEmployeeDashboard.aspx");
+                }
 
-            else if (drpRole.SelectedItem.Text == "Librarian")
-            {
-               
-                Session["RoleKey"] = "1";
-                Session["RoleName"] = "Librarian";
-                Session["EMPID"] = Session["EMPLOYEEID"].ToString();
-                Response.Redirect("~/SmartLMS/frmLibrarianDashboard.aspx");
-            }
+                else if (drpRole.SelectedItem.Text == "Librarian")
+                {
 
-            else if (drpRole.SelectedItem.Text == "Admin")
+                    Session["RoleKey"] = "1";
+                    Session["RoleName"] = "Librarian";
+                    Session["EMPID"] = Session["EMPLOYEEID"].ToString();
+                    Response.Redirect("~/SmartLMS/frmLibrarianDashboard.aspx");
+                }
+
+                else if (drpRole.SelectedItem.Text == "Admin")
+                {
+
+                    Session["RoleKey"] = "2";
+                    Session["RoleName"] = "Admin";
+                    Session["EMPID"] = Session["EMPLOYEEID"].ToString();
+                    Response.Redirect("~/SmartLMS/frmDashBoard.aspx");
+                }
+            }
+            catch (Exception ex)
             {
-               
-                Session["RoleKey"] = "2";
-                Session["RoleName"] = "Admin";
-                Session["EMPID"] = Session["EMPLOYEEID"].ToString();
-                Response.Redirect("~/SmartLMS/frmDashBoard.aspx");
+                Console.Write("Error:" + ex.ToString());
             }
         }
-
-       
     }
 }

@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Employee Dashboard</title>
+    <link rel="shortcut icon" href="../IMAGES/icon_aNT_icon.ico" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -46,6 +47,15 @@
         </div>
         <br />
         <%--<div style="background-image: url(../IMAGES/BookBackground.jpg); background-repeat:no-repeat; ">--%>
+        <div>
+            <table width="100%">
+                <tr>
+                    <td style="width: 100%;" align="center" >
+                        <marquee><asp:Label ID="lblRejectBook" ForeColor="Red" runat="server" ></asp:Label></marquee>
+                    </td>
+                </tr>
+            </table>
+        </div>
         <div>
             <table width="100%">
                 <tr>
@@ -97,7 +107,7 @@
                             <tr>
                                 <td style="width: 100%;" align="center">
                                     <asp:ImageButton ID="ImageButton10" runat="server" ImageUrl="~/IMAGES/OnlineApplication.png"
-                                        Height="46px" Width="68px" onclick="ImageButton10_Click" />
+                                        Height="46px" Width="68px" OnClick="ImageButton10_Click" />
                                     <br />
                                     Online Book Issue Request
                                 </td>

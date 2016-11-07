@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmUserCreation.aspx.cs"
-    MaintainScrollPositionOnPostback="true" Inherits="SmartLMSWeb.SmartLMS.frmUserCreation" %>
+    MaintainScrollPositionOnPostback="true" Inherits="SmartLMS.SmartLMS.frmUserCreation" %>
 
 <%@ Register Src="~/usercontrol/left.ascx" TagName="left" TagPrefix="uc3" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -231,7 +231,7 @@
                                                                                                 <ContentTemplate>--%>
                                                                                             <%--<asp:TextBox ID="txtHireDate" runat="server"></asp:TextBox>--%>
                                                                                             &nbsp;&nbsp<input id="txtDOJ" runat="server" maxlength="12"  tabindex="4"
-                                                                                                style="height: 30px; width: 130px" type="text"  />
+                                                                                                style="height: 30px; width: 130px" type="text" placeholder="MM/DD/YYYY" />
                                                                                             &nbsp;
                                                                                             <%-- </ContentTemplate>
                                                                                             </asp:UpdatePanel>--%>

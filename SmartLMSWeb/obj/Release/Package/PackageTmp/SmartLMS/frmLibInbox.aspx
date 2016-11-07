@@ -6,6 +6,7 @@
 <head runat="server">
     <title>Mail Box</title>
     <link href="../css/simple-sidebar.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../IMAGES/icon_aNT_icon.ico"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -88,7 +89,8 @@
                                                                                             <tr>
                                                                                                 <td style="width: 100%;" align="center">
                                                                                                     <asp:GridView ID="gvMail" runat="server" AutoGenerateColumns="False" Width="100%"
-                                                                                                        DataKeyNames="MAIL_ID" Font-Size="14px" AllowPaging="True" PageSize="5" OnRowCommand="gvMail_RowCommand">
+                                                                                                        DataKeyNames="MAIL_ID" Font-Size="14px" AllowPaging="True" PageSize="5" OnRowCommand="gvMail_RowCommand"
+                                                                                                        EnableTheming="True" OnPageIndexChanging="gvMail_PageIndexChanging">
                                                                                                         <Columns>
                                                                                                             <asp:BoundField HeaderText="From User" DataField="USER_NAME">
                                                                                                                 <ItemStyle HorizontalAlign="Center" />
@@ -102,9 +104,12 @@
                                                                                                             <asp:BoundField HeaderText="Date" DataField="CREATED_ON" DataFormatString="{0:d}">
                                                                                                                 <ItemStyle HorizontalAlign="Center" />
                                                                                                             </asp:BoundField>
-                                                                                                            <asp:ButtonField CommandName="Select" Text="Delete" HeaderText="Delete Mail" ItemStyle-HorizontalAlign="Center" />
+                                                                                                            <asp:ButtonField CommandName="Select" Text="Delete" HeaderText="Delete Mail" ItemStyle-HorizontalAlign="Center">
+                                                                                                                <ItemStyle HorizontalAlign="Center"></ItemStyle>
+                                                                                                            </asp:ButtonField>
                                                                                                         </Columns>
-                                                                                                    </asp:GridView>&nbsp;
+                                                                                                    </asp:GridView>
+                                                                                                    &nbsp;
                                                                                                     <asp:Label ID="lblMsg" Font-Size="14px" runat="server" ForeColor="Red"></asp:Label>
                                                                                                 </td>
                                                                                             </tr>

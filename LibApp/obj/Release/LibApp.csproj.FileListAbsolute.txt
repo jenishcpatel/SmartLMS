@@ -4,3 +4,16 @@ E:\Gaurav\Library\SmartLMS\LibApp\bin\Oracle.Web.dll
 E:\Gaurav\Library\SmartLMS\LibApp\obj\Release\LibApp.csproj.ResolveComReference.cache
 E:\Gaurav\Library\SmartLMS\LibApp\obj\Release\LibApp.dll
 E:\Gaurav\Library\SmartLMS\LibApp\obj\Release\LibApp.pdb
+D:\Working\jenishcpatel\SmartLMS\LibApp\bin\LibApp.dll.config
+D:\Working\jenishcpatel\SmartLMS\LibApp\bin\LibApp.dll
+D:\Working\jenishcpatel\SmartLMS\LibApp\bin\LibApp.pdb
+D:\Working\jenishcpatel\SmartLMS\LibApp\bin\EntityFramework.dll
+D:\Working\jenishcpatel\SmartLMS\LibApp\bin\EntityFramework.SqlServer.dll
+D:\Working\jenishcpatel\SmartLMS\LibApp\bin\MySql.Data.dll
+D:\Working\jenishcpatel\SmartLMS\LibApp\bin\MySql.Data.Entity.EF6.dll
+D:\Working\jenishcpatel\SmartLMS\LibApp\bin\EntityFramework.xml
+D:\Working\jenishcpatel\SmartLMS\LibApp\bin\EntityFramework.SqlServer.xml
+D:\Working\jenishcpatel\SmartLMS\LibApp\obj\Release\LibApp.csprojResolveAssemblyReference.cache
+D:\Working\jenishcpatel\SmartLMS\LibApp\obj\Release\LibApp.csproj.ResolveComReference.cache
+D:\Working\jenishcpatel\SmartLMS\LibApp\obj\Release\LibApp.dll
+D:\Working\jenishcpatel\SmartLMS\LibApp\obj\Release\LibApp.pdb

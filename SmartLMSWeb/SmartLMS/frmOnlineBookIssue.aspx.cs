@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using LibApp;
 using System.Data;
 
-namespace SmartLMSWeb.SmartLMS
+namespace SmartLMS.SmartLMS
 {
     public partial class frmOnlineBookIssue : System.Web.UI.Page
     {
@@ -16,22 +16,24 @@ namespace SmartLMSWeb.SmartLMS
         {
             if (!IsPostBack)
             {
-                lblUser.Text = Session["USER_NAME"].ToString();
-                lblRole.Text = Session["RoleName"].ToString();
-                txtIssuedTo.Disabled = true;
-                txtIssuedFrom.Disabled = true;
-                bindgrid();
-              
+                if (Session["USER_NAME"] != null && Session["RoleName"] != null)
+                {
+                    lblUser.Text = Session["USER_NAME"].ToString();
+                    lblRole.Text = Session["RoleName"].ToString();
+                    txtIssuedTo.Disabled = true;
+                    txtIssuedFrom.Disabled = true;
+                    bindgrid();
+                }
+                else
+                {
+                    Response.Redirect("~/SmartLMS/frmLogin.aspx");
+                }
             }
-
-
-
-
         }
-
 
         private void bindgrid()
         {
+            try { 
             cTransactionIssue objcTran = new cTransactionIssue();
             objcTran.EmployeeId = Convert.ToInt32(Session["EmpId"].ToString());
             DataSet ds1 = new DataSet();
@@ -41,7 +43,11 @@ namespace SmartLMSWeb.SmartLMS
                 gvAlredayIssued.DataSource = ds1;
                 gvAlredayIssued.DataBind();
                 DivAlreadyIssued.Visible = true;
-
+            }
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
             }
         }
 
@@ -59,16 +65,10 @@ namespace SmartLMSWeb.SmartLMS
             {
                 cTransactionIssue objcTran = new cTransactionIssue();
                 int rowIndex = Convert.ToInt32(e.CommandArgument);
-                
                 objcTran.IssueID = Convert.ToInt32(gvAlredayIssued.DataKeys[rowIndex].Values[0]);
-
                 string fromdate = Convert.ToDateTime(gvAlredayIssued.DataKeys[rowIndex].Values[1]).ToString("dd/MM/yyyy");
                 string todate = Convert.ToDateTime(gvAlredayIssued.DataKeys[rowIndex].Values[2]).ToString("dd/MM/yyyy");
                 string currentdate = Convert.ToDateTime(System.DateTime.Now).ToString("dd/MM/yyyy");
-
-
-
-
                 if (DateTime.ParseExact(fromdate, "dd/MM/yyyy", null) >= DateTime.ParseExact(currentdate, "dd/MM/yyyy", null) && DateTime.ParseExact(todate, "dd/MM/yyyy", null) >= DateTime.ParseExact(currentdate, "dd/MM/yyyy", null))
                 {
                     Response.Write("<script>alert('Book Already Issued, Kindly Extend when time period is Over');</script>");
@@ -76,38 +76,19 @@ namespace SmartLMSWeb.SmartLMS
                 else
                 {
                     cTransactionIssue objcTran1 = new cTransactionIssue();
-
                     DataSet ds2 = new DataSet();
                     objcTran1.IssueID = Convert.ToInt32(gvAlredayIssued.DataKeys[rowIndex].Values[0]);
                     ds2 = objcTran1.GetExtendedBookCount();
-                    int ExtendValue = 0;
-                    if (ds2.Tables[0].Rows.Count > 0)
-                    {
-                        ExtendValue = Convert.ToInt32(ds2.Tables[0].Rows[0][0].ToString());
-                        Session["EXTVAL"] = ExtendValue;
-
-                    }
-                    else
-                    {
-                        Session["EXTVAL"] = 0;
-                    }
+                   Session["EXTVAL"] =ds2.Tables[0].Rows.Count > 0? Convert.ToInt32(ds2.Tables[0].Rows[0][0].ToString()):0;
                     // ExtendValue = Convert.ToInt32(ds2.Tables[0].Rows[0][0].ToString());
-
-
                     int bookextend = Convert.ToInt32(gvAlredayIssued.DataKeys[rowIndex].Values[3]);
                     int EXTVAL = Convert.ToInt32(Session["EXTVAL"].ToString());
-
                     if (bookextend == EXTVAL)
                     {
                         Response.Write("<script>alert('Book Cant Extended, Extended Time Exceed');</script>");
-
                     }
-
                     else
                     {
-
-                       
-
                         cTransactionIssue objcTran2 = new cTransactionIssue();
                         objcTran2.EmployeeId = Convert.ToInt32(Session["EmpId"].ToString());
                         objcTran2.Barcode = gvAlredayIssued.DataKeys[rowIndex].Values[5].ToString();
@@ -125,19 +106,9 @@ namespace SmartLMSWeb.SmartLMS
                         objcTran2.BookID = Convert.ToInt32(gvAlredayIssued.DataKeys[rowIndex].Values[6]);
                         objcTran2.BookCatID = Convert.ToInt32(gvAlredayIssued.DataKeys[rowIndex].Values[7]);
                         objcTran2.Flag = 1;
-
                         int fissueid = Convert.ToInt32(gvAlredayIssued.DataKeys[rowIndex].Values[0]);
-                        if (fissueid > 0)
-                        {
-                            objcTran2.IssueID = fissueid;
-                        }
-                        else
-                        {
-                            objcTran2.IssueID = 0;
-                        }
-                      
+                        objcTran2.IssueID = fissueid > 0?fissueid:0;
                         int RVALUE=objcTran2.insertOnlineBookRequest();
-
                         if (RVALUE == 1)
                         {
                             Response.Write("<script>alert('Request for Book Issue Extended Already Sent.');</script>");
@@ -153,7 +124,7 @@ namespace SmartLMSWeb.SmartLMS
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 Response.Write("<script>alert('Error in Issue Book Issued');</script>");
             }
@@ -163,24 +134,18 @@ namespace SmartLMSWeb.SmartLMS
         {
             try
             {
-                
-                
                 if (txtBarcode.Text == "")
                 {
                     Response.Write("<script>alert('Kindly enter Barcode');</script>");
                     return;
                 }
-
-
                 cTransactionIssue objcTran = new cTransactionIssue();
                 DataSet ds = new DataSet();
                 objcTran.EmployeeId = Convert.ToInt32(Session["EMPID"]);
                 ds = objcTran.GetEmpData();
-
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     int rval;
-
                     objcTran.EmployeeId = Convert.ToInt32(Session["EMPID"]);
                     objcTran.BookID = Convert.ToInt32(Session["BookID"]);
                     objcTran.Barcode = txtBarcode.Text;
@@ -189,7 +154,6 @@ namespace SmartLMSWeb.SmartLMS
                     objcTran.ToIssuedDate = DateTime.ParseExact(txtIssuedTo.Value, "dd/MM/yyyy", null);
                     objcTran.Flag = 2;
                     objcTran.IssueID = 0;
-
                     rval = objcTran.insertOnlineBookRequest();
                     if (rval == 1)
                     {
@@ -221,10 +185,8 @@ namespace SmartLMSWeb.SmartLMS
                     Response.Write("<script>alert('Kindly Submit Your Deposite');</script>");
                     return;
                 }
-
-               
             }
-            catch
+            catch(Exception ex)
             {
                 Response.Write("<script>alert('Error in Issue Book Issued');</script>");
             }
@@ -232,6 +194,7 @@ namespace SmartLMSWeb.SmartLMS
 
         protected void btnBook_Click(object sender, ImageClickEventArgs e)
         {
+            try { 
             cTransactionIssue objcTran = new cTransactionIssue();
             if (txtBarcode.Text.Length > 0)
             {
@@ -242,38 +205,35 @@ namespace SmartLMSWeb.SmartLMS
                 Response.Write("<script>alert('Kindly Enter the Barcode Number');</script>");
                 return;
             }
-
             DataSet ds = new DataSet();
             ds = objcTran.GetBookListBarcode();
-
             if (ds.Tables[0].Rows.Count > 0)
             {
-
                 if (ds.Tables[0].Rows[0][0].ToString() == "1")
                 {
                     Response.Write("<script>alert('All the BOOKS was Already Issued to Some Other Employee, Kindly Contact after some time/You Enter Wrong Details');</script>");
-                    
                     return;
-
                 }
                 else
                 {
                     int days = 0;
                     days = Convert.ToInt32(ds.Tables[0].Rows[0]["issued_days"].ToString());
-
                     gvBookList.DataSource = ds;
                     gvBookList.DataBind();
                     txtIssuedFrom.Value = DateTime.Today.ToString("dd/MM/yyyy");
                     txtIssuedTo.Value = DateTime.Today.AddDays(days).ToString("dd/MM/yyyy");
                     Session["BookID"] = ds.Tables[0].Rows[0]["BOOK_ID"].ToString();
                     Session["BOOKCATID"] = ds.Tables[0].Rows[0]["book_cat_id"].ToString();
-
-
                 }
             }
             else
             {
                 Response.Write("<script>alert('This Barcode does not exist, kindly check the Barcode');</script>");
+            }
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
             }
         }
     }

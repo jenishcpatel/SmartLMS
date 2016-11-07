@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SmartLMSWeb.RDLC {
+namespace SmartLMS.RDLC {
     
     
     public partial class frmReportViewer {

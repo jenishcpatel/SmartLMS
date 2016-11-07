@@ -7,6 +7,7 @@
 <head id="Head1" runat="server">
     <title>Request to Librarian for New Book</title>
     <link href="../css/simple-sidebar.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../IMAGES/icon_aNT_icon.ico"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -87,23 +88,26 @@
                                                                                         </tr>
                                                                                         <tr valign="top">
                                                                                             <td height="40" align="right" valign="middle">
-                                                                                                <asp:Label ID="lblBookName" runat="server" Font-Size="14px" ForeColor="#848484"  Text="Book Name:"  ></asp:Label>
+                                                                                                <asp:Label ID="lblBookName" runat="server" Font-Size="14px" ForeColor="#848484" Text="Book Name:"></asp:Label>
                                                                                             </td>
                                                                                             <td align="left" height="40" valign="bottom">
                                                                                                 <asp:UpdatePanel ID="UpdatePanel4" runat="server" UpdateMode="Always">
                                                                                                     <ContentTemplate>
-                                                                                                        &nbsp;&nbsp<asp:TextBox ID="txtBookName" runat="server" class="inputbig" Height="30px" Width="130px"></asp:TextBox>
+                                                                                                        &nbsp;&nbsp<asp:TextBox ID="txtBookName" runat="server" class="inputbig" Height="30px"
+                                                                                                            Width="130px"></asp:TextBox>
                                                                                                         &nbsp;
                                                                                                     </ContentTemplate>
                                                                                                 </asp:UpdatePanel>
                                                                                             </td>
                                                                                             <td height="40" align="right" valign="middle">
-                                                                                                <asp:Label ID="lblAuthorName" runat="server" Text="Author Name:" Font-Size="14px" ForeColor="#848484"></asp:Label>
+                                                                                                <asp:Label ID="lblAuthorName" runat="server" Text="Author Name:" Font-Size="14px"
+                                                                                                    ForeColor="#848484"></asp:Label>
                                                                                             </td>
                                                                                             <td align="left" valign="middle">
                                                                                                 <asp:UpdatePanel ID="UpdatePanel5" runat="server" UpdateMode="Always">
                                                                                                     <ContentTemplate>
-                                                                                                        &nbsp;&nbsp<asp:TextBox ID="txtAuthorname" runat="server" class="inputbig" Height="30px" Width="130px"></asp:TextBox>
+                                                                                                        &nbsp;&nbsp<asp:TextBox ID="txtAuthorname" runat="server" class="inputbig" Height="30px"
+                                                                                                            Width="130px"></asp:TextBox>
                                                                                                     </ContentTemplate>
                                                                                                 </asp:UpdatePanel>
                                                                                             </td>
@@ -112,12 +116,8 @@
                                                                                     <table width="100%">
                                                                                         <tr>
                                                                                             <td height="30" align="center" valign="middle" colspan="4px">
-                                                                                                <asp:UpdatePanel ID="UpdatePanel17" runat="server" UpdateMode="Always">
-                                                                                                    <ContentTemplate>
-                                                                                                        <asp:Button ID="btnSave" runat="server" Text="Submit" BackColor="#0066ff" ForeColor="White"
-                                                                                                            OnClientClick="return validate();" OnClick="btnSave_Click" />
-                                                                                                    </ContentTemplate>
-                                                                                                </asp:UpdatePanel>
+                                                                                                <asp:Button ID="btnSave" runat="server" Text="Submit" BackColor="#0066ff" ForeColor="White"
+                                                                                                    OnClientClick="return validate();" OnClick="btnSave_Click" />
                                                                                             </td>
                                                                                         </tr>
                                                                                     </table>

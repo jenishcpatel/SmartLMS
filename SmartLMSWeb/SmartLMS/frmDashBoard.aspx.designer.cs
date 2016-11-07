@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SmartLMSWeb.SmartLMS {
+namespace SmartLMS.SmartLMS {
     
     
     public partial class frmDashBoard {

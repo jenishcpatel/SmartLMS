@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="left.ascx.cs" Inherits="SmartLMSWeb.usercontrol.left" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="left.ascx.cs" Inherits="SmartLMS.usercontrol.left" %>
 <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
         <td align="left" valign="top" class="boxgraytitle">

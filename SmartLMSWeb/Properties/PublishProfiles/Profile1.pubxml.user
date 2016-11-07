@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>H:\Publish SmartLMS</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/LibApp.dll">
+      <publishTime>10/20/2016 09:03:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.Common.dll">
+      <publishTime>10/18/2016 23:05:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.WebForms.dll">
+      <publishTime>10/18/2016 23:05:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.WinForms.dll">
+      <publishTime>10/18/2016 23:05:41</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>10/18/2016 08:57:05</publishTime>
+    </File>
+    <File Include="bin/SmartLMSWeb.dll">
+      <publishTime>10/20/2016 09:03:23</publishTime>
+    </File>
+    <File Include="css/bootstrap.css">
+      <publishTime>09/15/2016 13:29:42</publishTime>
+    </File>
+    <File Include="css/bootstrap.min.css">
+      <publishTime>09/15/2016 13:29:42</publishTime>
+    </File>
+    <File Include="css/simple-sidebar.css">
+      <publishTime>09/15/2016 13:29:42</publishTime>
+    </File>
+    <File Include="css/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png">
+      <publishTime>09/15/2016 13:29:42</publishTime>
+    </File>
+    <File Include="css/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png">
+      <publishTime>09/15/2016 13:29:42</publishTime>
+    </File>
+    <File Include="css/ui-lightness/images/ui-bg_flat_10_000000_40x100.png">
+      <publishTime>09/15/2016 13:29:42</publishTime>
+    </File>
+    <File Include="css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png">
+      <publishTime>09/15/2016 13:29:42</publishTime>
+    </File>
+    <File Include="css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png">
+      <publishTime>09/15/2016 13:29:42</publishTime>
+    </File>
+    <File Include="css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>09/15/2016 13:29:42</publishTime>
+    </File>
+    <File Include="css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png">
+      <publishTime>09/15/2016 13:29:42</publishTime>
+    </File>
+    <File Include="css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png">
+      <publishTime>09/15/2016 13:29:42</publishTime>
+    </File>
+    <File Include="css/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png">
+      <publishTime>09/15/2016 13:29:42</publishTime>
+    </File>
+    <File Include="css/ui-lightness/images/ui-icons_222222_256x240.png">
+      <publishTime>09/15/2016 13:29:42</publishTime>
+    </File>
+    <File Include="css/ui-lightness/images/ui-icons_228ef1_256x240.png">
+      <publishTime>09/15/2016 13:29:42</publishTime>
+    </File>
+    <File Include="css/ui-lightness/images/ui-icons_ef8c08_256x240.png">
+      <publishTime>09/15/2016 13:29:44</publishTime>
+    </File>
+    <File Include="css/ui-lightness/images/ui-icons_ffd27a_256x240.png">
+      <publishTime>09/15/2016 13:29:44</publishTime>
+    </File>
+    <File Include="css/ui-lightness/images/ui-icons_ffffff_256x240.png">
+      <publishTime>09/15/2016 13:29:44</publishTime>
+    </File>
+    <File Include="css/ui-lightness/jquery-ui-1.8.19.custom.css">
+      <publishTime>09/15/2016 13:29:42</publishTime>
+    </File>
+    <File Include="IMAGES/1443213433_personal.ico">
+      <publishTime>09/15/2016 13:29:48</publishTime>
+    </File>
+    <File Include="IMAGES/1443213515_Profile.png">
+      <publishTime>09/15/2016 13:29:48</publishTime>
+    </File>
+    <File Include="IMAGES/1443213717_user-group-new.png">
+      <publishTime>09/15/2016 13:29:48</publishTime>
+    </File>
+    <File Include="IMAGES/1443214151_edit.png">
+      <publishTime>09/15/2016 13:29:50</publishTime>
+    </File>
+    <File Include="IMAGES/1453158897_book.png">
+      <publishTime>09/15/2016 13:29:50</publishTime>
+    </File>
+    <File Include="IMAGES/1453159257_address-book-alt.png">
+      <publishTime>09/15/2016 13:29:50</publishTime>
+    </File>
+    <File Include="IMAGES/1453159544_architecture-interior-13.png">
+      <publishTime>09/15/2016 13:29:50</publishTime>
+    </File>
+    <File Include="IMAGES/1453159902_library.png">
+      <publishTime>09/15/2016 13:29:50</publishTime>
+    </File>
+    <File Include="IMAGES/1453160134_vector_65_04.png">
+      <publishTime>09/15/2016 13:29:50</publishTime>
+    </File>
+    <File Include="IMAGES/1453160287_checked-checklist-notepad.png">
+      <publishTime>09/15/2016 13:29:50</publishTime>
+    </File>
+    <File Include="IMAGES/1453648662_button_45.png">
+      <publishTime>09/15/2016 13:29:50</publishTime>
+    </File>
+    <File Include="IMAGES/admin-logo.png">
+      <publishTime>09/15/2016 13:29:50</publishTime>
+    </File>
+    <File Include="IMAGES/admin_top_bg.jpg">
+      <publishTime>09/15/2016 13:29:50</publishTime>
+    </File>
+    <File Include="IMAGES/ajax-loader.gif">
+      <publishTime>09/15/2016 13:29:50</publishTime>
+    </File>
+    <File Include="IMAGES/arrow_left_link.png">
+      <publishTime>09/15/2016 13:29:50</publishTime>
+    </File>
+    <File Include="IMAGES/b-inactive.gif">
+      <publishTime>09/15/2016 13:29:50</publishTime>
+    </File>
+    <File Include="IMAGES/BookBackground.jpg">
+      <publishTime>09/15/2016 13:29:50</publishTime>
+    </File>
+    <File Include="IMAGES/botoom.png">
+      <publishTime>09/15/2016 13:29:50</publishTime>
+    </File>
+    <File Include="IMAGES/department.png">
+      <publishTime>09/15/2016 13:29:52</publishTime>
+    </File>
+    <File Include="IMAGES/Designation.png">
+      <publishTime>09/15/2016 13:29:52</publishTime>
+    </File>
+    <File Include="IMAGES/employeeDetails.gif">
+      <publishTime>09/15/2016 13:29:52</publishTime>
+    </File>
+    <File Include="IMAGES/footer.png">
+      <publishTime>09/15/2016 13:29:52</publishTime>
+    </File>
+    <File Include="IMAGES/icon_aNT_icon.ico">
+      <publishTime>09/15/2016 13:29:54</publishTime>
+    </File>
+    <File Include="IMAGES/issue.png">
+      <publishTime>09/15/2016 13:29:54</publishTime>
+    </File>
+    <File Include="IMAGES/login_icon_administrator.png">
+      <publishTime>09/15/2016 13:29:54</publishTime>
+    </File>
+    <File Include="IMAGES/login_icon_administrator_s.png">
+      <publishTime>09/15/2016 13:29:54</publishTime>
+    </File>
+    <File Include="IMAGES/login_title_administrator.png">
+      <publishTime>09/15/2016 13:29:54</publishTime>
+    </File>
+    <File Include="IMAGES/Logo.png">
+      <publishTime>09/15/2016 13:29:54</publishTime>
+    </File>
+    <File Include="IMAGES/logo1.png">
+      <publishTime>09/15/2016 13:29:54</publishTime>
+    </File>
+    <File Include="IMAGES/logo1_UXi_icon.ico">
+      <publishTime>09/15/2016 13:29:56</publishTime>
+    </File>
+    <File Include="IMAGES/noimage.jpg">
+      <publishTime>09/15/2016 13:29:56</publishTime>
+    </File>
+    <File Include="IMAGES/OnlineApplication.png">
+      <publishTime>09/15/2016 13:29:56</publishTime>
+    </File>
+    <File Include="IMAGES/search.png">
+      <publishTime>09/15/2016 13:29:56</publishTime>
+    </File>
+    <File Include="IMAGES/search1.png">
+      <publishTime>09/15/2016 13:29:56</publishTime>
+    </File>
+    <File Include="IMAGES/sedow_left.png">
+      <publishTime>09/15/2016 13:29:56</publishTime>
+    </File>
+    <File Include="IMAGES/sedow_right.png">
+      <publishTime>09/15/2016 13:29:56</publishTime>
+    </File>
+    <File Include="IMAGES/sedow_top.png">
+      <publishTime>09/15/2016 13:29:56</publishTime>
+    </File>
+    <File Include="IMAGES/sedow_top_inner.png">
+      <publishTime>09/15/2016 13:29:58</publishTime>
+    </File>
+    <File Include="IMAGES/submit.png">
+      <publishTime>09/15/2016 13:29:58</publishTime>
+    </File>
+    <File Include="IMAGES/update.gif">
+      <publishTime>09/15/2016 13:29:58</publishTime>
+    </File>
+    <File Include="js/jquery-ui-1.8.19.custom.min.js">
+      <publishTime>09/15/2016 13:30:06</publishTime>
+    </File>
+    <File Include="js/sideviewmenu.css">
+      <publishTime>09/15/2016 13:30:06</publishTime>
+    </File>
+    <File Include="js/sideviewmenu.js">
+      <publishTime>09/15/2016 13:30:06</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/18/2016 23:05:42</publishTime>
+    </File>
+    <File Include="RDLC/frmReportViewer.aspx">
+      <publishTime>09/15/2016 13:30:46</publishTime>
+    </File>
+    <File Include="RDLC/rdlcDailyBookIssued.rdlc">
+      <publishTime>09/15/2016 13:30:46</publishTime>
+    </File>
+    <File Include="RDLC/rdlcIssuedBook.rdlc">
+      <publishTime>09/15/2016 13:30:46</publishTime>
+    </File>
+    <File Include="RDLC/rdlcPaidUserList.rdlc">
+      <publishTime>09/15/2016 13:30:46</publishTime>
+    </File>
+    <File Include="RDLC/rdlcReturnBook.rdlc">
+      <publishTime>09/15/2016 13:30:46</publishTime>
+    </File>
+    <File Include="SmartLMS/frmAddCategory.aspx">
+      <publishTime>09/15/2016 13:30:46</publishTime>
+    </File>
+    <File Include="SmartLMS/frmAddDepartment.aspx">
+      <publishTime>09/15/2016 13:30:48</publishTime>
+    </File>
+    <File Include="SmartLMS/frmAddDesignation.aspx">
+      <publishTime>09/15/2016 13:30:48</publishTime>
+    </File>
+    <File Include="SmartLMS/frmBookEntry.aspx">
+      <publishTime>09/15/2016 13:30:48</publishTime>
+    </File>
+    <File Include="SmartLMS/frmDashBoard.aspx">
+      <publishTime>09/15/2016 13:30:48</publishTime>
+    </File>
+    <File Include="SmartLMS/frmDeposite.aspx">
+      <publishTime>09/15/2016 13:30:48</publishTime>
+    </File>
+    <File Include="SmartLMS/frmEmployeeDashboard.aspx">
+      <publishTime>09/15/2016 13:30:48</publishTime>
+    </File>
+    <File Include="SmartLMS/frmGetOnlineRequest.aspx">
+      <publishTime>09/15/2016 13:30:50</publishTime>
+    </File>
+    <File Include="SmartLMS/frmLibInbox.aspx">
+      <publishTime>09/15/2016 13:30:50</publishTime>
+    </File>
+    <File Include="SmartLMS/frmLibrarianDashboard.aspx">
+      <publishTime>09/15/2016 13:30:50</publishTime>
+    </File>
+    <File Include="SmartLMS/frmLogin.aspx">
+      <publishTime>09/15/2016 13:30:50</publishTime>
+    </File>
+    <File Include="SmartLMS/frmOnlineBookIssue.aspx">
+      <publishTime>09/15/2016 13:30:50</publishTime>
+    </File>
+    <File Include="SmartLMS/frmReport.aspx">
+      <publishTime>09/15/2016 13:30:52</publishTime>
+    </File>
+    <File Include="SmartLMS/frmRequestForBook.aspx">
+      <publishTime>09/15/2016 13:30:52</publishTime>
+    </File>
+    <File Include="SmartLMS/frmReturnBook.aspx">
+      <publishTime>09/15/2016 13:30:52</publishTime>
+    </File>
+    <File Include="SmartLMS/frmRoleSelection.aspx">
+      <publishTime>09/15/2016 13:30:52</publishTime>
+    </File>
+    <File Include="SmartLMS/frmSearchBook.aspx">
+      <publishTime>09/15/2016 13:30:54</publishTime>
+    </File>
+    <File Include="SmartLMS/frmTransactions.aspx">
+      <publishTime>09/15/2016 13:30:54</publishTime>
+    </File>
+    <File Include="SmartLMS/frmUserCreation.aspx">
+      <publishTime>09/15/2016 13:30:54</publishTime>
+    </File>
+    <File Include="usercontrol/left.ascx">
+      <publishTime>09/15/2016 13:30:56</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/20/2016 09:03:24</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

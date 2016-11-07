@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SmartLMSWeb.SmartLMS {
+namespace SmartLMS.SmartLMS {
     
     
     public partial class frmAddCategory {
@@ -64,7 +64,7 @@ namespace SmartLMSWeb.SmartLMS {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SmartLMSWeb.usercontrol.left left1;
+        protected global::SmartLMS.usercontrol.left left1;
         
         /// <summary>
         /// lblDisplay control.

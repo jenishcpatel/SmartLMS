@@ -7,9 +7,10 @@
 <head runat="server">
     <title></title>
     <link href="../css/simple-sidebar.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../IMAGES/icon_aNT_icon.ico"/>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" class="table-font">
     <div>
         <div>
             <asp:Image ID="Image1" runat="server" ImageUrl="~/IMAGES/logo1.png" Width="100%"
@@ -85,11 +86,17 @@
                                                                                             </tr>
                                                                                         </table>
                                                                                         <table width="100%">
-                                                                                            <tr>
+                                                                                                <tr>
+                                                                                                    <td align="center">
+                                                                                                        <asp:Label ID="lblMsg" runat="server" ForeColor="Red"></asp:Label>
+                                                                                                    </td>
+                                                                                                </tr>
                                                                                                 <td style="width: 100%;" align="center">
                                                                                                     <asp:GridView ID="gvAlredayIssued" runat="server" AutoGenerateColumns="False" Width="100%"
                                                                                                         DataKeyNames="BOOK_CAT_ID,ISSUE_TYPE,EMPLOYEE_ID,BOOK_ID,BARCODE,ISSUE_FROM_DATE,ISSUE_DATE,REQ_ID"
-                                                                                                        AllowPaging="True" PageSize="5" OnRowCommand="gvAlredayIssued_RowCommand">
+                                                                                                        AllowPaging="True" PageSize="5" OnRowCommand="gvAlredayIssued_RowCommand" 
+                                                                                                        OnRowDeleting="gvAlredayIssued_RowDeleting" 
+                                                                                                        onpageindexchanging="gvAlredayIssued_PageIndexChanging">
                                                                                                         <Columns>
                                                                                                             <asp:BoundField HeaderText="Employee Code" DataField="EMPLOYEE_ID">
                                                                                                                 <ItemStyle HorizontalAlign="Center" />
@@ -121,13 +128,16 @@
                                                                                                             <asp:BoundField HeaderText="Issued To Date" DataField="isue_to_date" DataFormatString="{0:dd/MM/yyyy}">
                                                                                                                 <ItemStyle HorizontalAlign="Center" />
                                                                                                             </asp:BoundField>--%>
-                                                                                                            <asp:ButtonField CommandName="UPDATE" Text="Approved" HeaderText="Approed" ItemStyle-HorizontalAlign="Center">
+                                                                                                            <asp:ButtonField CommandName="SELECT" Text="Approve" HeaderText="Approve" ItemStyle-HorizontalAlign="Center">
                                                                                                                 <ItemStyle HorizontalAlign="Center"></ItemStyle>
                                                                                                             </asp:ButtonField>
-                                                                                                            <asp:ButtonField CommandName="select" Text="Reject" HeaderText="Reject" ItemStyle-HorizontalAlign="Center">
+                                                                                                            <%--<asp:ButtonField CommandName="select" Text="Reject" HeaderText="Reject" ItemStyle-HorizontalAlign="Center">
                                                                                                                 <ItemStyle HorizontalAlign="Center"></ItemStyle>
-                                                                                                            </asp:ButtonField>
-                                                                                                            
+                                                                                                            </asp:ButtonField>--%>
+                                                                                                            <asp:CommandField ShowDeleteButton="true" HeaderText="Reject" ItemStyle-HorizontalAlign="Center"
+                                                                                                                DeleteText="Reject">
+                                                                                                                <ItemStyle HorizontalAlign="Center"></ItemStyle>
+                                                                                                            </asp:CommandField>
                                                                                                         </Columns>
                                                                                                     </asp:GridView>
                                                                                                 </td>

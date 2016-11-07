@@ -8,7 +8,7 @@ using LibApp;
 using System.Data;
 
 
-namespace SmartLMSWeb.SmartLMS
+namespace SmartLMS.SmartLMS
 {
     public partial class frmLibInbox : System.Web.UI.Page
     {
@@ -16,31 +16,39 @@ namespace SmartLMSWeb.SmartLMS
         {
             if (!IsPostBack)
             {
-                lblUser.Text = Session["USER_NAME"].ToString();
-                lblRole.Text = Session["RoleName"].ToString();
-                Maillist();
+                if (Session["USER_NAME"] != null && Session["RoleName"] != null)
+                {
+                    lblUser.Text = Session["USER_NAME"].ToString();
+                    lblRole.Text = Session["RoleName"].ToString();
+                    Maillist();
+                }
+                else
+                {
+                    Response.Redirect("~/SmartLMS/frmLogin.aspx");
+                }
             }
-
         }
-
-
 
         private void Maillist()
         {
-            csBook objbook = new csBook();
-            DataSet ds = new DataSet();
-            ds = objbook.GetMailList();
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                gvMail.DataSource = ds;
-                gvMail.DataBind();
-                
+            try {
+                csBook objbook = new csBook();
+                DataSet ds = new DataSet();
+                ds = objbook.GetMailList();
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    gvMail.DataSource = ds;
+                    gvMail.DataBind();
+                }
+                else
+                {
+                    lblMsg.Text = "No Mail Available in the Inbox";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lblMsg.Text = "No Mail Available in the Inbox";
+                Console.Write("Error:" + ex.ToString());
             }
-
         }
 
         protected void gvMail_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -51,18 +59,14 @@ namespace SmartLMSWeb.SmartLMS
                 {
                     csBook objbook = new csBook();
                     int rowIndex = Convert.ToInt32(e.CommandArgument);
-
                     objbook.MailId = Convert.ToInt32(gvMail.DataKeys[rowIndex].Values[0]);
-
                     objbook.UpdateMail();
                     gvMail.DataSource = null;
                     gvMail.DataBind();
                     Maillist();
                 }
-                                              
-                
             }
-            catch
+            catch(Exception ex)
             {
                 Response.Write("<script>alert('Error in Mail Delete');</script>");
             }
@@ -70,20 +74,29 @@ namespace SmartLMSWeb.SmartLMS
 
         protected void lnkSingOut_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/SmartLMS/frmLogin.aspx");
-            Session["USER_NAME"] = "";
-            Session["RoleName"] = "";
-            Session["EmpId"] = "";
-
+            try
+            {
+                Response.Redirect("~/SmartLMS/frmLogin.aspx");
+                Session["USER_NAME"] = "";
+                Session["RoleName"] = "";
+                Session["EmpId"] = "";
+            }
+            catch (Exception ex) {
+                Console.Write("Error:" + ex.ToString());
+            }
         }
 
         protected void gvMail_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            gvMail.PageIndex = e.NewPageIndex;
-            Maillist();
+            try
+            {
+                gvMail.PageIndex = e.NewPageIndex;
+                Maillist();
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
+            }
         }
-
-       
-
     }
 }

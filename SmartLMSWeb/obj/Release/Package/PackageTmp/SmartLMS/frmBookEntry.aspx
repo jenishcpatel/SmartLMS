@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmBookEntry.aspx.cs" Inherits="SmartLMSWeb.SmartLMS.frmBookEntry" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmBookEntry.aspx.cs" Inherits="SmartLMSWeb.SmartLMS.frmBookEntry" MaintainScrollPositionOnPostback="true" %>
 
 <%@ Register Src="~/usercontrol/left.ascx" TagName="left" TagPrefix="uc3" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -9,6 +9,7 @@
     <link type="text/css" href="../css/ui-lightness/jquery-ui-1.8.19.custom.css" rel="stylesheet" />
     <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="../js/jquery-ui-1.8.19.custom.min.js"></script>
+    <link rel="shortcut icon" href="../IMAGES/icon_aNT_icon.ico"/>
     <script type="text/javascript">
         $(function () {
             $("#txtPurchaseD").datepicker({ dateFormat: "dd/mm/yy" });
@@ -109,7 +110,8 @@
                                                                                                 <asp:Label ID="lblBarcode" runat="server" Font-Size="14px" ForeColor="#848484" Text="Barcode No:"></asp:Label>
                                                                                             </td>
                                                                                             <td style="width: 17%">
-                                                                                                <asp:TextBox ID="txtBarcodeNo" runat="server" MaxLength="20" Height="30px" Width="130px"></asp:TextBox>
+                                                                                                <asp:TextBox ID="txtBarcodeNo" runat="server" MaxLength="20" Height="30px" 
+                                                                                                    Width="130px" TextMode="Number"></asp:TextBox>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr>
@@ -144,7 +146,8 @@
                                                                                                     Text="Purchase Amount:"></asp:Label>
                                                                                             </td>
                                                                                             <td style="width: 17%">
-                                                                                                <asp:TextBox ID="txtPurchaseAmount" runat="server" MaxLength="20" Height="30px" Width="130px"></asp:TextBox>
+                                                                                                <asp:TextBox ID="txtPurchaseAmount" runat="server" MaxLength="20" Height="30px" 
+                                                                                                    Width="130px" TextMode="Number"></asp:TextBox>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr>
@@ -153,14 +156,16 @@
                                                                                                     Text="Issued for Day's:"></asp:Label>
                                                                                             </td>
                                                                                             <td style="width: 17%">
-                                                                                                <asp:TextBox ID="txtIssuedDays" runat="server" MaxLength="20" Height="30px" Width="130px"></asp:TextBox>
+                                                                                                <asp:TextBox ID="txtIssuedDays" runat="server" MaxLength="20" Height="30px" 
+                                                                                                    Width="130px" TextMode="Number"></asp:TextBox>
                                                                                             </td>
                                                                                             <td style="width: 17%" align="right">
                                                                                                 <asp:Label ID="lblExtendeddays" runat="server" Font-Size="14px" ForeColor="#848484"
                                                                                                     Text="Extended Days:"></asp:Label>
                                                                                             </td>
                                                                                             <td style="width: 17%">
-                                                                                                <asp:TextBox ID="txtExtend" runat="server" MaxLength="20" Height="30px" Width="130px"></asp:TextBox>
+                                                                                                <asp:TextBox ID="txtExtend" runat="server" MaxLength="20" Height="30px" 
+                                                                                                    Width="130px" TextMode="Number"></asp:TextBox>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr>
@@ -169,14 +174,16 @@
                                                                                                     Text="No of Extends:"></asp:Label>
                                                                                             </td>
                                                                                             <td style="width: 17%">
-                                                                                                <asp:TextBox ID="txtNoofExtends" runat="server" MaxLength="20" Height="30px" Width="130px"></asp:TextBox>
+                                                                                                <asp:TextBox ID="txtNoofExtends" runat="server" MaxLength="20" Height="30px" 
+                                                                                                    Width="130px" TextMode="Number"></asp:TextBox>
                                                                                             </td>
                                                                                             <td style="width: 17%" align="right">
                                                                                                 <asp:Label ID="lblNoofCopies" runat="server" Font-Size="14px" ForeColor="#848484"
                                                                                                     Text="No of Copies:"></asp:Label>
                                                                                             </td>
                                                                                             <td style="width: 17%">
-                                                                                                <asp:TextBox ID="txtNoofCopies" runat="server" MaxLength="20" Height="30px" Width="130px"></asp:TextBox>
+                                                                                                <asp:TextBox ID="txtNoofCopies" runat="server" MaxLength="20" Height="30px" 
+                                                                                                    Width="130px" TextMode="Number"></asp:TextBox>
                                                                                             </td>
                                                                                         </tr>
                                                                                     </table>
@@ -220,7 +227,9 @@
                                                                                             <td style="width: 100%;" align="center">
                                                                                                 <asp:GridView ID="gvDisplay" runat="server" AutoGenerateColumns="False" Width="100%"
                                                                                                     Font-Size="14px" DataKeyNames="BOOK_ID,purchase_date,author_name,bar_code,book_cat_id,book_name,book_price,NO_OF_COPIES,ISSUED_DAYS,EXTEND_DAYS,EXTEND_TIME"
-                                                                                                    AllowPaging="True" PageSize="5" OnRowDeleting="gvDisplay_RowDeleting" OnRowCommand="gvDisplay_RowCommand">
+                                                                                                    AllowPaging="True" PageSize="5" OnRowDeleting="gvDisplay_RowDeleting" 
+                                                                                                    OnRowCommand="gvDisplay_RowCommand" 
+                                                                                                    onpageindexchanging="gvDisplay_PageIndexChanging">
                                                                                                     <Columns>
                                                                                                         <asp:BoundField HeaderText="Book Name" DataField="book_name">
                                                                                                             <ItemStyle HorizontalAlign="Center" />

@@ -20,7 +20,7 @@ namespace LibApp
         private string _role_id;
         private string _user_id;
         private string _password;
-        private Int32 _empid;
+        private string _empid;
         private string _firstname;
         private string _lastname;
         private Int64 _mobilenumber;
@@ -51,7 +51,7 @@ namespace LibApp
         }
 
 
-        public Int32 EmpId
+        public string EmpId
         {
             get { return _empid; }
             set { _empid = value; }
@@ -180,7 +180,7 @@ namespace LibApp
                 //cmd.InitialLONGFetchSize = 20000;
                 cmd.CommandText = "PRC_GET_USER_DETAILS";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("P_EMP_ID", MySqlDbType.Int32).Value = this.EmpId;
+                cmd.Parameters.Add("P_EMP_ID", MySqlDbType.VarChar).Value = this.EmpId;
                 cmd.Parameters.Add("P_PASSWORD", MySqlDbType.VarChar).Value = this.Password;
                 //cmd.Parameters.Add("P_O", MySqlDbType.RefCursor).Direction = ParameterDirection.Output;
                 da.SelectCommand = cmd;

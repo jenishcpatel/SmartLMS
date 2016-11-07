@@ -11,6 +11,7 @@
     <link type="text/css" href="../css/ui-lightness/jquery-ui-1.8.19.custom.css" rel="stylesheet" />
     <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="../js/jquery-ui-1.8.19.custom.min.js"></script>
+    <link rel="shortcut icon" href="../IMAGES/icon_aNT_icon.ico"/>
     <script type="text/javascript">
         $(function () {
             $("#txtDOJ").datepicker({ dateFormat: "dd/mm/yy" });
@@ -149,7 +150,8 @@
                                                                                         <td align="left" height="40" valign="bottom">
                                                                                             <asp:UpdatePanel ID="UpdatePanel4" runat="server" UpdateMode="Always">
                                                                                                 <ContentTemplate>
-                                                                                                    &nbsp;&nbsp<asp:TextBox ID="txtEmployeeId" runat="server" Height="30px" Width="130px"></asp:TextBox>
+                                                                                                    &nbsp;&nbsp<asp:TextBox ID="txtEmployeeId" runat="server" Height="30px" 
+                                                                                                        Width="130px" TextMode="Number"></asp:TextBox>
                                                                                                     &nbsp;<asp:ImageButton ID="btnSearch" runat="server" ImageUrl="~/IMAGES/search1.png"
                                                                                                         OnClick="btnSearch_Click" />
                                                                                                 </ContentTemplate>
@@ -183,7 +185,8 @@
                                                                                             </asp:UpdatePanel>
                                                                                         </td>
                                                                                         <td height="40" align="right" valign="middle">
-                                                                                             <asp:Label ID="lblconfirm" runat="server" Text="Confirm Password:" Font-Size="14px" ForeColor="#848484"></asp:Label>
+                                                                                            <asp:Label ID="lblconfirm" runat="server" Text="Confirm Password:" Font-Size="14px"
+                                                                                                ForeColor="#848484"></asp:Label>
                                                                                         </td>
                                                                                         <td align="left" valign="middle">
                                                                                             <asp:UpdatePanel ID="UpdatePanel16" runat="server" UpdateMode="Always">
@@ -196,7 +199,7 @@
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <td height="40" align="right">
-                                                                                             <asp:Label ID="lblFirstName" runat="server" Text="First Name:" Font-Size="14px" ForeColor="#848484"></asp:Label>
+                                                                                            <asp:Label ID="lblFirstName" runat="server" Text="First Name:" Font-Size="14px" ForeColor="#848484"></asp:Label>
                                                                                         </td>
                                                                                         <td height="40">
                                                                                             <asp:UpdatePanel ID="UpdatePanel6" runat="server" UpdateMode="Always">
@@ -220,20 +223,22 @@
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <td style="width: 14%" align="right" height="40">
-                                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <asp:Label ID="lbljoin" runat="server" Text=" Joining Date:" Font-Size="14px" ForeColor="#848484"></asp:Label>
+                                                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                            <asp:Label ID="lbljoin" runat="server" Text=" Joining Date:" Font-Size="14px" ForeColor="#848484"></asp:Label>
                                                                                         </td>
                                                                                         <td style="width: 20%">
                                                                                             <%--  <asp:UpdatePanel ID="UpdatePanel8" runat="server" UpdateMode="Always">
                                                                                                 <ContentTemplate>--%>
                                                                                             <%--<asp:TextBox ID="txtHireDate" runat="server"></asp:TextBox>--%>
-                                                                                            &nbsp;&nbsp<input id="txtDOJ" runat="server" maxlength="12" name="txtDOJ" tabindex="4"
-                                                                                                style="height: 30px; width: 130px" type="text" value="dd/MM/yyyy" />
+                                                                                            &nbsp;&nbsp<input id="txtDOJ" runat="server" maxlength="12"  tabindex="4"
+                                                                                                style="height: 30px; width: 130px" type="text"  />
                                                                                             &nbsp;
                                                                                             <%-- </ContentTemplate>
                                                                                             </asp:UpdatePanel>--%>
                                                                                         </td>
                                                                                         <td style="width: 15%" align="right">
-                                                                                            <asp:Label ID="lblReleving" runat="server" Text="Releving Date:" Font-Size="14px" ForeColor="#848484"></asp:Label>
+                                                                                            <asp:Label ID="lblReleving" runat="server" Text="Releving Date:" Font-Size="14px"
+                                                                                                ForeColor="#848484"></asp:Label>
                                                                                         </td>
                                                                                         <td style="width: 17%">
                                                                                             <%-- <asp:UpdatePanel ID="UpdatePanel9" runat="server" UpdateMode="Always">
@@ -248,7 +253,8 @@
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <td style="width: 17%" height="40" align="right">
-                                                                                            <asp:Label ID="lblDepartment" runat="server" Text="Department:" Font-Size="14px" ForeColor="#848484"></asp:Label>
+                                                                                            <asp:Label ID="lblDepartment" runat="server" Text="Department:" Font-Size="14px"
+                                                                                                ForeColor="#848484"></asp:Label>
                                                                                         </td>
                                                                                         <td height="40">
                                                                                             <asp:UpdatePanel ID="UpdatePanel10" runat="server" UpdateMode="Always">
@@ -262,7 +268,8 @@
                                                                                             </asp:UpdatePanel>
                                                                                         </td>
                                                                                         <td height="40" align="right">
-                                                                                            <asp:Label ID="lblDesignation" runat="server" Text="Designation:" Font-Size="14px" ForeColor="#848484"></asp:Label> 
+                                                                                            <asp:Label ID="lblDesignation" runat="server" Text="Designation:" Font-Size="14px"
+                                                                                                ForeColor="#848484"></asp:Label>
                                                                                         </td>
                                                                                         <td height="40" colspan="2px" valign="middle">
                                                                                             <asp:UpdatePanel ID="UpdatePanel11" runat="server" UpdateMode="Always">
@@ -279,7 +286,7 @@
                                                                                     </tr>
                                                                                     <tr>
                                                                                         <td align="right" height="40">
-                                                                                            <asp:Label ID="lblMobile" runat="server" Text="Mobile Number:" Font-Size="14px" ForeColor="#848484"></asp:Label>  
+                                                                                            <asp:Label ID="lblMobile" runat="server" Text="Mobile Number:" Font-Size="14px" ForeColor="#848484"></asp:Label>
                                                                                         </td>
                                                                                         <td height="40">
                                                                                             <asp:UpdatePanel ID="UpdatePanel12" runat="server" UpdateMode="Always">
@@ -290,7 +297,7 @@
                                                                                             </asp:UpdatePanel>
                                                                                         </td>
                                                                                         <td align="right" height="40">
-                                                                                            <asp:Label ID="lblEmail" runat="server" Text="Email:" Font-Size="14px" ForeColor="#848484"></asp:Label>   
+                                                                                            <asp:Label ID="lblEmail" runat="server" Text="Email:" Font-Size="14px" ForeColor="#848484"></asp:Label>
                                                                                         </td>
                                                                                         <td height="40">
                                                                                             <asp:UpdatePanel ID="UpdatePanel13" runat="server" UpdateMode="Always">
@@ -305,7 +312,8 @@
                                                                                         <td colspan="6" align="center" height="40">
                                                                                             <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Always">
                                                                                                 <ContentTemplate>
-                                                                                                    <asp:CheckBoxList ID="chkIsper" runat="server" AutoPostBack="True" RepeatDirection="Horizontal" Font-Size="14px" ForeColor="#848484">
+                                                                                                    <asp:CheckBoxList ID="chkIsper" runat="server" RepeatDirection="Horizontal" Font-Size="14px"
+                                                                                                        ForeColor="#848484">
                                                                                                         <asp:ListItem Value="1">Admin</asp:ListItem>
                                                                                                         <asp:ListItem Value="2">Employee</asp:ListItem>
                                                                                                         <asp:ListItem Value="3">Librarian</asp:ListItem>
@@ -321,10 +329,10 @@
                                                                                         <td colspan="6" align="center" height="40">
                                                                                             <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Always">
                                                                                                 <ContentTemplate>
-                                                                                                    <asp:RadioButton runat="server" ID="rdbCheckFreeUser" Text="FreeUser" GroupName="a" Font-Size="14px" ForeColor="#848484">
-                                                                                                    </asp:RadioButton>
-                                                                                                    <asp:RadioButton runat="server" ID="rdbCheckPaidUser" Text="PaidUser" GroupName="a" Font-Size="14px" ForeColor="#848484">
-                                                                                                    </asp:RadioButton>
+                                                                                                    <asp:RadioButton runat="server" ID="rdbCheckFreeUser" Text="FreeUser" GroupName="a"
+                                                                                                        Font-Size="14px" ForeColor="#848484"></asp:RadioButton>
+                                                                                                    <asp:RadioButton runat="server" ID="rdbCheckPaidUser" Text="PaidUser" GroupName="a"
+                                                                                                        Font-Size="14px" ForeColor="#848484"></asp:RadioButton>
                                                                                                 </ContentTemplate>
                                                                                                 <Triggers>
                                                                                                     <asp:AsyncPostBackTrigger ControlID="rdbCheckFreeUser"></asp:AsyncPostBackTrigger>
@@ -338,11 +346,7 @@
                                                                         </tr>
                                                                         <tr>
                                                                             <td height="30" align="center" valign="middle" colspan="4px">
-                                                                                <asp:UpdatePanel ID="UpdatePanel17" runat="server" UpdateMode="Always">
-                                                                                    <ContentTemplate>
-                                                                                        <asp:Button ID="btnSave" runat="server" BackColor="#0066ff" ForeColor="White" OnClick="btnSave_Click" />
-                                                                                    </ContentTemplate>
-                                                                                </asp:UpdatePanel>
+                                                                                <asp:Button ID="btnSave" runat="server" BackColor="#0066ff" ForeColor="White" OnClick="btnSave_Click" />
                                                                             </td>
                                                                         </tr>
                                                                     </table>

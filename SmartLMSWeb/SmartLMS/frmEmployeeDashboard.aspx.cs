@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using LibApp;
 using System.Data;
 
-namespace SmartLMSWeb.SmartLMS
+namespace SmartLMS.SmartLMS
 {
     public partial class frmEmployeeDashboard : System.Web.UI.Page
     {
@@ -15,16 +15,19 @@ namespace SmartLMSWeb.SmartLMS
         {
             if (!IsPostBack)
             {
-                lblUser.Text = Session["USER_NAME"].ToString();
-                lblRole.Text = Session["RoleName"].ToString();
-
-                //bindgrid();
-                filltext();
-                fillregejectMessage();
-
-
+                if (Session["USER_NAME"] != null && Session["RoleName"] != null)
+                {
+                    lblUser.Text = Session["USER_NAME"].ToString();
+                    lblRole.Text = Session["RoleName"].ToString();
+                    //bindgrid();
+                    filltext();
+                    fillregejectMessage();
+                }
+                else
+                {
+                    Response.Redirect("~/SmartLMS/frmLogin.aspx");
+                }
             }
-
         }
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
@@ -55,31 +58,41 @@ namespace SmartLMSWeb.SmartLMS
 
         private void filltext()
         {
+            try { 
             cLogin objcTran = new cLogin();
             DataSet ds1 = new DataSet();
-            objcTran.EmpId = Convert.ToInt32(Session["EmpId"].ToString());
+            objcTran.EmpId = Session["EmpId"].ToString();
             ds1 = objcTran.GETEMPCOUNT();
             if (ds1.Tables[0].Rows.Count > 0)
             {
                 lblIssuedBook.Text = ds1.Tables[0].Rows[0]["TotalBookIssued"].ToString();
                 lblReturnedBook.Text = ds1.Tables[0].Rows[0]["TotalBookReturn"].ToString();
                 lblFine.Text = ds1.Tables[0].Rows[0]["FINEAMOUNT"].ToString();
-
             }
-
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
+            }
         }
 
 
         private void fillregejectMessage()
         {
+            try { 
             cLogin objcTran = new cLogin();
             DataSet ds1 = new DataSet();
-            objcTran.EmpId = Convert.ToInt32(Session["EmpId"].ToString());
+            objcTran.EmpId = Session["EmpId"].ToString();
             //ds1 = objcTran.RejectMessage();
             //if (ds1.Tables[0].Rows.Count > 0)
             //{
             //    lblRejectBook.Text = ds1.Tables[0].Rows[0]["Message"].ToString();
             //}
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
+            }
         }
 
         protected void lnkSingOut_Click(object sender, EventArgs e)

@@ -43,7 +43,7 @@
       </Query>
       <rd:DataSetInfo>
         <rd:DataSetName>dsIssuedBook</rd:DataSetName>
-        <rd:SchemaPath>E:\Gaurav\Library\SmartLMS\SmartLMSWeb\RDLC\dsIssuedBook.xsd</rd:SchemaPath>
+        <rd:SchemaPath>E:\Gaurav\Library\SmartLMS\SmartLMS\RDLC\dsIssuedBook.xsd</rd:SchemaPath>
         <rd:TableName>dtIssueBook</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

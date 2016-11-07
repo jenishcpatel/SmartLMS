@@ -6,6 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Add Department</title>
+    <link rel="shortcut icon" href="../IMAGES/icon_aNT_icon.ico"/>
     <link href="../css/simple-sidebar.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -118,7 +119,8 @@
                                                                                         <td style="width: 100%;" align="center">
                                                                                             <asp:GridView ID="gvDisplay" runat="server" AutoGenerateColumns="False" Width="100%"
                                                                                                 Font-Size="14px" AllowPaging="True" PageSize="5" OnRowDeleting="gvDisplay_RowDeleting"
-                                                                                                DataKeyNames="DEPART_ID,DEPART_NAME" OnRowCommand="gvDisplay_RowCommand">
+                                                                                                DataKeyNames="DEPART_ID,DEPART_NAME" OnRowCommand="gvDisplay_RowCommand" 
+                                                                                                onpageindexchanging="gvDisplay_PageIndexChanging">
                                                                                                 <Columns>
                                                                                                     <asp:BoundField HeaderText="Department Name" DataField="DEPART_NAME">
                                                                                                         <ItemStyle HorizontalAlign="Center" />

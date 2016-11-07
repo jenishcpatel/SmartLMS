@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LibApp;
 using System.Data;
-namespace SmartLMSWeb.SmartLMS
+namespace SmartLMS.SmartLMS
 {
     public partial class frmGetOnlineRequest : System.Web.UI.Page
     {
@@ -14,17 +14,21 @@ namespace SmartLMSWeb.SmartLMS
         {
             if (!IsPostBack)
             {
-                lblUser.Text = Session["USER_NAME"].ToString();
-                lblRole.Text = Session["RoleName"].ToString();
-               
-                bindgrid();
-
+                if (Session["USER_NAME"] != null && Session["RoleName"]!=null) {
+                    lblUser.Text = Session["USER_NAME"].ToString();
+                    lblRole.Text = Session["RoleName"].ToString();
+                    bindgrid();
+                }
+                else
+                {
+                    Response.Redirect("~/SmartLMS/frmLogin.aspx");
+                }
             }
         }
 
-
         private void bindgrid()
         {
+            try { 
             cTransactionIssue objcTran = new cTransactionIssue();
             DataSet ds1 = new DataSet();
             ds1 = objcTran.GetOnlineBookReq();
@@ -33,11 +37,15 @@ namespace SmartLMSWeb.SmartLMS
                 gvAlredayIssued.DataSource = ds1;
                 gvAlredayIssued.DataBind();
                 DivAlreadyIssued.Visible = true;
-
             }
             else
             {
                 lblMsg.Text = "No Request Available";
+            }
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
             }
         }
 
@@ -56,10 +64,8 @@ namespace SmartLMSWeb.SmartLMS
                 if (e.CommandName == "SELECT")
                 {
                     cTransactionIssue objcTran = new cTransactionIssue();
-
                     int rowIndex = Convert.ToInt32(e.CommandArgument);
                     string Issuetype = gvAlredayIssued.DataKeys[rowIndex].Values[1].ToString();
-
                     if (Issuetype == "NEW")
                     {
                         int rval;
@@ -74,12 +80,10 @@ namespace SmartLMSWeb.SmartLMS
                         objcTran.Flag = 1;
                         objcTran.OnlineFlag = 1;
                         rval = objcTran.insertIssueBook();
-                       
                         gvAlredayIssued.DataSource = null;
                         gvAlredayIssued.DataBind();
                         DataBind();
                         bindgrid();
-                        
                         if (rval == 1)
                         {
                             Response.Write("<script>alert('Book Already Issued Can't Issue Book Again kindly Extend it');</script>");
@@ -91,9 +95,7 @@ namespace SmartLMSWeb.SmartLMS
                         else
                         {
                             Response.Write("<script>alert('Sucessfully Issued');</script>");
-                            
                         }
-
                     }
                     else if (Issuetype == "EXTEND")
                     {
@@ -127,10 +129,7 @@ namespace SmartLMSWeb.SmartLMS
                         {
                             Response.Write("<script>alert('Sucessfully Issued');</script>");
                         }
-
-
                     }
-
                 }
                 //else if (e.CommandName == "select")
                 //{
@@ -141,39 +140,39 @@ namespace SmartLMSWeb.SmartLMS
                 //    Response.Write("<script>alert('Sucessfully Reject');</script>");
                 //    bindgrid();
                 //}
-
-
             }
-
             catch (Exception ex)
             {
                 Response.Write("<script>alert('Error in Issue Book Issued');</script>");
-                
             }
-           
-
         }
 
         protected void gvAlredayIssued_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            try { 
             cTransactionIssue objcTran = new cTransactionIssue();
             GridViewRow row = (GridViewRow)gvAlredayIssued.Rows[e.RowIndex];
             objcTran.REQ_ID = Convert.ToInt32(gvAlredayIssued.DataKeys[e.RowIndex].Values["REQ_ID"].ToString());
             objcTran.RejectRequest();
             Response.Write("<script>alert('Sucessfully Reject');</script>");
             bindgrid();
-
-
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
+            }
         }
 
         protected void gvAlredayIssued_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            try { 
             gvAlredayIssued.PageIndex = e.NewPageIndex;
             bindgrid();
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
+            }
         }
-
-       
-        
-
     }
 }

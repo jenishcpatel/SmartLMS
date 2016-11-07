@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmAddDesignation.aspx.cs" Inherits="SmartLMSWeb.SmartLMS.frmAddDesignation" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmAddDesignation.aspx.cs" Inherits="SmartLMS.SmartLMS.frmAddDesignation" %>
 <%@ Register Src="~/usercontrol/left.ascx" TagName="left" TagPrefix="uc3" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 

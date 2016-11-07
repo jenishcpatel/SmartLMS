@@ -6,30 +6,39 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LibApp;
 using System.Data;
-namespace SmartLMSWeb.SmartLMS
+namespace SmartLMS.SmartLMS
 {
     public partial class frmLibrarianDashboard : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblUser.Text = Session["USER_NAME"].ToString();
-            lblRole.Text = Session["RoleName"].ToString();
-            getDashBoardCount();
-            getcountMail();
-
-           
-            
+            if (Session["USER_NAME"] != null && Session["RoleName"] != null)
+            {
+                lblUser.Text = Session["USER_NAME"].ToString();
+                lblRole.Text = Session["RoleName"].ToString();
+                getDashBoardCount();
+                getcountMail();
+            }
+            else
+            {
+                Response.Redirect("~/SmartLMS/frmLogin.aspx");
+            }
         }
 
         private void getDashBoardCount()
         {
+            try { 
             csBook objbook = new csBook();
             DataSet ds = new DataSet();
             ds = objbook.GetDashBoardCount();
             lblBookIssued.Text = ds.Tables[0].Rows[0]["TotalBookIssued"].ToString();
             lblReturnBook.Text = ds.Tables[0].Rows[0]["TotalBookReturn"].ToString();
             lblFine.Text = ds.Tables[0].Rows[0]["FINEAMOUNT"].ToString();
-
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
+            }
         }
         protected void lnkSingOut_Click(object sender, EventArgs e)
         {
@@ -40,11 +49,16 @@ namespace SmartLMSWeb.SmartLMS
         }
         private void getcountMail()
         {
+            try { 
             csBook objbook = new csBook();
             DataSet ds = new DataSet();
             ds = objbook.GetMailCount();
             lblMail.Text = ds.Tables[0].Rows[0]["COUNTMAIL"].ToString();
-
+            }
+            catch (Exception ex)
+            {
+                Console.Write("Error:" + ex.ToString());
+            }
         }
 
         protected void ImageButton10_Click(object sender, ImageClickEventArgs e)
@@ -79,9 +93,7 @@ namespace SmartLMSWeb.SmartLMS
 
         protected void ImageButton7_Click(object sender, ImageClickEventArgs e)
         {
-
             Response.Redirect("~/SmartLMS/frmReport.aspx");
-
         }
     }
 }

@@ -11,6 +11,7 @@
             height: 30px;
         }
     </style>
+    <link rel="shortcut icon" href="../IMAGES/icon_aNT_icon.ico"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -171,7 +172,7 @@
                         Today&#39;s Total Number Of Book Issued :
                     </td>
                     <td style="width: 45%;" align="left">
-                        <asp:Label ID="lblNOOfEmp" runat="server"></asp:Label>
+                        <asp:Label ID="lblBookIssued" runat="server"></asp:Label>
                     </td>
                 </tr>
                 <tr>
@@ -179,7 +180,7 @@
                         Today&#39;s Total Number Of Book Return:
                     </td>
                     <td style="width: 45%;" align="left">
-                        <asp:Label ID="lblSalarytobepaid" runat="server"></asp:Label>
+                        <asp:Label ID="lblReturnBook" runat="server"></asp:Label>
                     </td>
                 </tr>
                 <tr>
